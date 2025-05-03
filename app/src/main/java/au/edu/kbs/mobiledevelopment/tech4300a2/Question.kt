@@ -1,21 +1,5 @@
-
-class Question (
-    private val number: Int,
-    private val label: String,
-    private val answer: String,
-) {
-     fun getNumber(): Int {
-        return number
-    }
-
-     fun getLabel(): String {
-        return label
-    }
-
-     fun getAnswer(): String {
-        return answer
-    }
-}
+package au.edu.kbs.mobiledevelopment.tech4300a2
+// Question Types Classes
 
 class TrueOfFalseQType(
     private val number: Int,
@@ -40,12 +24,12 @@ class TrueOfFalseQType(
      }
 
     fun getTrueOption () : String {
-        val option : String = "True"
+        val option = "True"
         return option
     }
 
      fun getFalseOption () : String {
-         val option : String = "False"
+         val option = "False"
          return option
      }
      fun getFeedback () : String {

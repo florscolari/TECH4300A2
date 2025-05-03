@@ -43,14 +43,15 @@ class SecondActivity : AppCompatActivity() {
 
         // Retrieving data from Main Activity
         val i = intent
+        val q1CorrectAnswer = i.getIntExtra("Q1_CORRECT_ANSWER", -1) // must come as Int to be compared
         val q1Answer = i.getStringExtra("Q1_USER_ANSWER")?.toInt()
-        val q2Answer = i.getStringExtra("Q2_USER_ANSWER")
         val q2CorrectAnswer = i.getStringExtra("Q2_CORRECT_ANSWER")
+        val q2Answer = i.getStringExtra("Q2_USER_ANSWER")
+
 
         // Q1: Check data & evaluate results
         val q1result: String
-        val resultCorrect = 4
-        if (q1Answer == resultCorrect) {
+        if (q1Answer == q1CorrectAnswer) {
            q1result = "Correct"
            totalScore += 1
            marks += 1
@@ -60,7 +61,6 @@ class SecondActivity : AppCompatActivity() {
         }
 
         // Q2: Check data & evaluate results
-        //val question2 = TrueOfFalseQType(1, "Is this operation correct?", "True", "6 - 1 = 8", "Choose between True or False")
         val q2Result: String
         if (q2Answer == q2CorrectAnswer) {
             q2Result = "Correct"
