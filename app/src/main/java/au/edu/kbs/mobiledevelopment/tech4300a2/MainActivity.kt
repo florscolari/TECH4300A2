@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             // To check Question 1
             val answerText = q1Answer.text.toString()
             return if (answerText.isNotEmpty()) {
+                q1Feedback.text = "" // trick to clear previous feedback message
                 answerText
             } else {
                 q1Feedback.text = question1.getFeedback()
@@ -90,8 +91,10 @@ class MainActivity : AppCompatActivity() {
         fun q2CheckAnswer() : String? {
             // To check Question 2
             return if (q2BtnTrue.isChecked) {
+                q2Feedback.text = "" // trick to clear previous feedback message
                 q2BtnTrue.text.toString()
             } else if (q2BtnFalse.isChecked) {
+                q2Feedback.text = ""
                 q2BtnFalse.text.toString()
             } else {
                 q2Feedback.text = question2.getFeedback()
