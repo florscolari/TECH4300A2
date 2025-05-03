@@ -1,5 +1,6 @@
 package au.edu.kbs.mobiledevelopment.tech4300a2
 
+import TrueOfFalseQType
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -41,27 +42,40 @@ class SecondActivity : AppCompatActivity() {
 
         // Retrieving data from Main Activity
         val i = intent
-        val mainQ1Answer = i.getStringExtra("KEY_Q1_ANSWER")?.toInt()
+        val q1Answer = i.getStringExtra("KEY_Q1_ANSWER")?.toInt()
+        val q2Answer = i.getStringExtra("KEY_Q2_ANSWER")
 
         // Q1: Check data & evaluate results
-        val result: String
+        val q1result: String
         val resultCorrect = 4
-        if (mainQ1Answer == resultCorrect) {
-           result = "Correct"
-           totalScore ++
-           marks ++
+        if (q1Answer == resultCorrect) {
+           q1result = "Correct"
+           totalScore += 1
+           marks += 1
         } else {
-            result = "Incorrect"
+            q1result = "Incorrect"
             totalScore = 0
+            wrongAnswers += 1
+        }
+
+        // Q2: Check data & evaluate results
+        val question2 = TrueOfFalseQType(1, "Is this operation correct?", "True", "6 - 1 = 8", "Choose between True or False")
+        val q2Result: String
+        if (q2Answer == question2.getAnswer()) {
+            q2Result = "Correct"
+            totalScore ++
+            marks ++
+        } else {
+            q2Result = "Incorrect"
+            totalScore -= 1
             wrongAnswers += 1
         }
 
 
 
-
         // Assigning data to UI elements to be displayed on Main Activity
         val textResult = findViewById<TextView>(R.id.result)
-        textResult.text = result
+        textResult.text = q1result
         score.text = totalScore.toString()
         marksContent.text = marks.toString()
         wrongAnswersContent.text = wrongAnswers.toString()

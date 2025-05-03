@@ -113,34 +113,40 @@
         android:id="@+id/q2Feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Feedback Placeholder"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/vRight"
         app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toBottomOf="@+id/btnTrue"
+        app:layout_constraintTop_toBottomOf="@+id/q2BtnGroup"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/btnTrue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="btnTrue"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/btnFalse"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toTopOf="@+id/hBottom" />
 
-    <Button
-        android:id="@+id/btnFalse"
+    <RadioGroup
+        android:id="@+id/q2BtnGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btnFalse"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toEndOf="@id/vRight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnTrue"
-        app:layout_constraintTop_toTopOf="@+id/hBottom" />
+        app:layout_constraintEnd_toStartOf="@+id/vRight"
+        app:layout_constraintStart_toStartOf="@+id/vLeft"
+        app:layout_constraintTop_toBottomOf="@+id/hBottom"
+
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btnTrue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnTrue" />
+
+        <RadioButton
+            android:id="@+id/btnFalse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnFalse"/>
+    </RadioGroup>
+
+
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hBottom"

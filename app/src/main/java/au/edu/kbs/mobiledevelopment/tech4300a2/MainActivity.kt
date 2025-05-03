@@ -3,11 +3,11 @@ package au.edu.kbs.mobiledevelopment.tech4300a2
 
 import Question
 import TrueOfFalseQType
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,12 +18,15 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
 
-
-// Setting questions by using Question class
-val question1 = Question(1, "Is this operation correct?", "True")
-val question2 = TrueOfFalseQType(1, "Is this operation correct?", "True", "6 - 1 = 8", "Choose between True or False")
-
-
+    // Setting questions by using Question class
+    val question1 = Question(1, "Is this operation correct?", "True")
+    private val question2 = TrueOfFalseQType(
+        1,
+        "Is this operation correct?",
+        "True",
+        "6 - 1 = 8",
+        "Choose between True or False"
+    )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,12 +38,12 @@ val question2 = TrueOfFalseQType(1, "Is this operation correct?", "True", "6 - 1
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    // Taking all UI elements to be used for a question object Q2
+        // Taking all UI elements to be used for a question object Q2
         val q2Number = findViewById<TextView>(R.id.q2Number)
         val q2Label = findViewById<TextView>(R.id.q2Label)
         val q2OperationText = findViewById<TextView>(R.id.q2OperationText)
-        val q2BtnTrue = findViewById<Button>(R.id.btnTrue)
-        val q2BtnFalse = findViewById<Button>(R.id.btnFalse)
+        val q2BtnTrue = findViewById<RadioButton>(R.id.btnTrue)
+        val q2BtnFalse = findViewById<RadioButton>(R.id.btnFalse)
         val q2Feedback = findViewById<TextView>(R.id.q2Feedback)
 
         q2Number.text = question2.getNumber().toString()
@@ -48,22 +51,33 @@ val question2 = TrueOfFalseQType(1, "Is this operation correct?", "True", "6 - 1
         q2OperationText.text = question2.getOperationText()
         q2BtnTrue.text = question2.getTrueOption()
         q2BtnFalse.text = question2.getFalseOption()
-        q2Feedback.text = question2.getFeedback()
+
 
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
         val q1Answer = findViewById<EditText>(R.id.q1UserValue)
 
-
-        btnMainToSecond.setOnClickListener {
-                val mainToSecond = Intent(this, SecondActivity::class.java)
-                // Taking values from user input elements
-                val q1AnswerValue = q1Answer.text.toString()
-
-                // Time to send data
-                mainToSecond.putExtra("KEY_Q1_ANSWER", q1AnswerValue)
-
-                startActivity(mainToSecond)
+        fun q2CheckAnswer() : String? {
+            // To check Question 2
+            return if (q2BtnTrue.isChecked) {
+                q2BtnTrue.text.toString()
+            } else if (q2BtnFalse.isChecked) {
+                q2BtnFalse.text.toString()
+            } else {
+                q2Feedback.text = question2.getFeedback()
+                null// it's working!!
             }
+        }
+        btnMainToSecond.setOnClickListener {
+            val mainToSecond = Intent(this, SecondActivity::class.java)
+            // Taking values from user input elements
+            val q1AnswerValue = q1Answer.text.toString()
+            val q2SelectedAnswer = q2CheckAnswer() ?: return@setOnClickListener
+            // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
 
+            // Time to send data
+            mainToSecond.putExtra("KEY_Q1_ANSWER", q1AnswerValue)
+            mainToSecond.putExtra("KEY_Q2_ANSWER", q2SelectedAnswer)
+            startActivity(mainToSecond)
         }
     }
+}
