@@ -54,6 +54,39 @@ class TrueOfFalseQType(
 
 }
 
+class FillGapQType(
+    private val number: Int,
+    private val label: String,
+    private val answer: Int,
+    private val opText1 : String,
+    private val opText2 : String,
+    private val feedback : String,
+)
+{
+    fun getNumber () : Int {
+        return number
+    }
+    fun getLabel () : String {
+        return label
+    }
+    fun getAnswer () : Int {
+        return answer
+    }
+
+    fun getOpText1 () : String {
+        return opText1
+    }
+
+    fun getOpText2 () : String {
+        return opText2
+    }
+
+    fun getFeedback () : String {
+        return feedback
+    }
+
+}
+
 
 fun main() {
     val question1 = TrueOfFalseQType(1, "Is this operation correct?", "True", "5 + 4 = 9", "feedback")

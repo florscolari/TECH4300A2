@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">TECH4300A2</string>
+
+    <!-- Q1 -->
+    <string name="q1Number">1</string>
+    <string name="q1Label">Label</string>
+    <string name="q1OperationText">Operation Text</string>
+    <!--<string name="q1Hint">num</string>-->
+    <string name="q1OpText1">Text 1</string>
+    <string name="q1OpText2">Text 2</string>
+    <string name="q1Feedback" />
+
+    <!-- Q2 -->
+    <string name="q2Number">2</string>
+    <string name="q2Label">Label</string>
+    <string name="q2OperationText">Operation Text</string>
+    <string name="q2BtnTrue">True</string>
+    <string name="q2BtnFalse">False</string>
+    <string name="q2Feedback" />
+
+
 </resources>

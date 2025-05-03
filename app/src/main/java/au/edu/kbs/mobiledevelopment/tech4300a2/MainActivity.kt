@@ -1,6 +1,7 @@
 package au.edu.kbs.mobiledevelopment.tech4300a2
 
 
+import FillGapQType
 import Question
 import TrueOfFalseQType
 import android.content.Intent
@@ -20,14 +21,8 @@ class MainActivity : AppCompatActivity() {
 
 
     // Setting questions by using Question class
-    val question1 = Question(1, "Is this operation correct?", "True")
-    private val question2 = TrueOfFalseQType(
-        1,
-        "Is this operation correct?",
-        "True",
-        "6 - 1 = 8",
-        "Choose between True or False"
-    )
+    private val question1 = FillGapQType(1, "Fill the gap", 4, "5 +", "= 9", "Enter a number")
+    private val question2 = TrueOfFalseQType(2, "Is this operation correct?", "True", "6 - 1 = 8","Choose between True or False")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +34,37 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Taking all UI elements to be used for a question object Q1
+        val q1Number = findViewById<TextView>(R.id.q1Number)
+        val q1Label = findViewById<TextView>(R.id.q1Label)
+        val q1OpText1 = findViewById<TextView>(R.id.q1OpText1)
+        val q1OpText2 = findViewById<TextView>(R.id.q1OpText2)
+        val q1Feedback = findViewById<TextView>(R.id.q1Feedback)
+
+        q1Number.text = question1.getNumber().toString()
+        q1Label.text = question1.getLabel()
+        q1OpText1.text = question1.getOpText1()
+        q1OpText2.text = question1.getOpText2()
+
+        val q1Answer = findViewById<EditText>(R.id.q1UserValue)
+
+
+        fun q1CheckAnswer() : String? {
+            // To check Question 1
+            val answerText = q1Answer.text.toString()
+            return if (answerText.isNotEmpty()) {
+                answerText
+            } else {
+                q1Feedback.text = question1.getFeedback()
+                null// it's working!!
+            }
+        }
+
+
+
+
+
         // Taking all UI elements to be used for a question object Q2
         val q2Number = findViewById<TextView>(R.id.q2Number)
         val q2Label = findViewById<TextView>(R.id.q2Label)
@@ -55,7 +81,11 @@ class MainActivity : AppCompatActivity() {
 
 
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
-        val q1Answer = findViewById<EditText>(R.id.q1UserValue)
+
+
+
+
+
 
         fun q2CheckAnswer() : String? {
             // To check Question 2
@@ -71,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Taking values from user input elements
-            val q1AnswerValue = q1Answer.text.toString()
+            val q1AnswerValue = q1CheckAnswer() ?: return@setOnClickListener
             val q2SelectedAnswer = q2CheckAnswer() ?: return@setOnClickListener
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
 
