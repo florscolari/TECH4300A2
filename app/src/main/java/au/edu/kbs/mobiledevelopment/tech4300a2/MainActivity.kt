@@ -5,6 +5,7 @@ import Question
 import TrueOfFalseQType
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -75,9 +76,12 @@ class MainActivity : AppCompatActivity() {
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
 
             // Time to send data
-            mainToSecond.putExtra("KEY_Q1_ANSWER", q1AnswerValue)
-            mainToSecond.putExtra("KEY_Q2_ANSWER", q2SelectedAnswer)
+            mainToSecond.putExtra("Q1_USER_ANSWER", q1AnswerValue)
+            mainToSecond.putExtra("Q2_CORRECT_ANSWER", question2.getAnswer())
+            mainToSecond.putExtra("Q2_USER_ANSWER", q2SelectedAnswer)
             startActivity(mainToSecond)
         }
     }
 }
+
+
