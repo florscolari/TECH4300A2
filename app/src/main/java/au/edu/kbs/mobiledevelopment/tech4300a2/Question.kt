@@ -4,15 +4,15 @@ class Question (
     private val label: String,
     private val answer: String,
 ) {
-    open fun getNumber(): Int {
+     fun getNumber(): Int {
         return number
     }
 
-    open fun getLabel(): String {
+     fun getLabel(): String {
         return label
     }
 
-    open fun getAnswer(): String {
+     fun getAnswer(): String {
         return answer
     }
 }
@@ -22,10 +22,23 @@ class TrueOfFalseQType(
     private val label: String,
     private val answer: String,
     private val operationText : String,
-    //private val option : Array,
     private val feedback : String,
     )
  {
+     fun getNumber () : Int {
+         return number
+     }
+     fun getLabel () : String {
+         return label
+     }
+     fun getAnswer () : String {
+         return answer
+     }
+
+     fun getOperationText () : String {
+         return operationText
+     }
+
     fun getTrueOption () : String {
         val option : String = "True"
         return option
@@ -35,7 +48,9 @@ class TrueOfFalseQType(
          val option : String = "False"
          return option
      }
-
+     fun getFeedback () : String {
+         return feedback
+     }
 
 }
 
