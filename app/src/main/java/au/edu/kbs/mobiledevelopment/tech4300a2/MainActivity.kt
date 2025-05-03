@@ -100,13 +100,18 @@ class MainActivity : AppCompatActivity() {
         }
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
-            // Taking values from user input elements
-            val q1AnswerValue = q1CheckAnswer() ?: return@setOnClickListener
-            val q2SelectedAnswer = q2CheckAnswer() ?: return@setOnClickListener
+            // Storing & Checking user input values from user input elements
+            val q1SelectedAnswer = q1CheckAnswer()
+            val q2SelectedAnswer = q2CheckAnswer()
+
+            // if at least 1 answer is null, stop
+            if (q1SelectedAnswer == null || q2SelectedAnswer == null) {
+                return@setOnClickListener
+            }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
 
             // Time to send data
-            mainToSecond.putExtra("Q1_USER_ANSWER", q1AnswerValue)
+            mainToSecond.putExtra("Q1_USER_ANSWER", q1SelectedAnswer)
             mainToSecond.putExtra("Q2_CORRECT_ANSWER", question2.getAnswer())
             mainToSecond.putExtra("Q2_USER_ANSWER", q2SelectedAnswer)
             startActivity(mainToSecond)
