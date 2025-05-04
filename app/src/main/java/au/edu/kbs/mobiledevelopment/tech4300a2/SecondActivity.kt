@@ -47,16 +47,19 @@ class SecondActivity : AppCompatActivity() {
         val q1Answer = i.getStringExtra("Q1_USER_ANSWER")?.toInt()
         val q2CorrectAnswer = i.getStringExtra("Q2_CORRECT_ANSWER")
         val q2Answer = i.getStringExtra("Q2_USER_ANSWER")
+        val q3CorrectAnswer = i.getStringExtra("Q3_CORRECT_ANSWER")
+        val q3Answer = i.getStringExtra("Q3_USER_ANSWER")
+
 
 
         // Q1: Check data & evaluate results
-        val q1result: String
+        val q1Result: String
         if (q1Answer == q1CorrectAnswer) {
-           q1result = "Correct"
+           q1Result = "Correct"
            totalScore += 1
            marks += 1
         } else {
-            q1result = "Incorrect"
+            q1Result = "Incorrect"
             wrongAnswers += 1
         }
 
@@ -71,6 +74,17 @@ class SecondActivity : AppCompatActivity() {
             wrongAnswers += 1
         }
 
+        // Q3: Check data & evaluate results
+        val q3Result: String
+        if (q3Answer?.trim()?.uppercase() == q3CorrectAnswer?.trim()?.uppercase()) { // to safely compare both strings
+            q3Result = "Correct"
+            totalScore += 1
+            marks += 1
+        } else {
+            q3Result = "Incorrect"
+            wrongAnswers += 1
+        }
+
 
 
 
@@ -79,7 +93,7 @@ class SecondActivity : AppCompatActivity() {
 
         // Assigning data to UI elements to be displayed on Main Activity
         val textResult = findViewById<TextView>(R.id.result)
-        textResult.text = q1result
+        textResult.text = q1Result
         score.text = String.format(Locale.ROOT, "%.0f%%", percentage)
         marksContent.text = marks.toString()
         wrongAnswersContent.text = wrongAnswers.toString()

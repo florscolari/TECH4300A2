@@ -5,7 +5,6 @@
     <string name="q1Number">1</string>
     <string name="q1Label">Label</string>
     <string name="q1OperationText">Operation Text</string>
-    <!--<string name="q1Hint">num</string>-->
     <string name="q1OpText1">Text 1</string>
     <string name="q1OpText2">Text 2</string>
     <string name="q1Feedback" />
@@ -18,5 +17,13 @@
     <string name="q2BtnFalse">False</string>
     <string name="q2Feedback" />
 
+    <!-- Q3 -->
+    <string name="q3Number">2</string>
+    <string name="q3Label">Label</string>
+    <string name="q3OperationText">Operation Text</string>
+    <string name="q3BtnOption1">False</string>
+    <string name="q3BtnOption2">False</string>
+    <string name="q3BtnOption3">False</string>
+    <string name="q3Feedback" />
 
 </resources>

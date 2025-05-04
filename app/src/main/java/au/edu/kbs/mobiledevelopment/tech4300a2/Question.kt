@@ -1,6 +1,49 @@
 package au.edu.kbs.mobiledevelopment.tech4300a2
 // Question Types Classes
 
+class MChoiceQType(
+    private val number: Int,
+    private val label: String,
+    private val answer: String,
+    private val operationText : String,
+    private val option1 : String,
+    private val option2 : String,
+    private val option3 : String,
+    private val feedback : String,
+)
+{
+    fun getNumber () : Int {
+        return number
+    }
+    fun getLabel () : String {
+        return label
+    }
+    fun getAnswer () : String {
+        return answer
+    }
+
+    fun getOperationText () : String {
+        return operationText
+    }
+
+    fun getOption1 () : String {
+        val option = ""
+        return option1
+    }
+    fun getOption2 () : String {
+        val option = ""
+        return option2
+    }
+    fun getOption3 () : String {
+        val option = ""
+        return option3
+    }
+    fun getFeedback () : String {
+        return feedback
+    }
+
+}
+
 class TrueOfFalseQType(
     private val number: Int,
     private val label: String,
@@ -22,7 +65,6 @@ class TrueOfFalseQType(
      fun getOperationText () : String {
          return operationText
      }
-
     fun getTrueOption () : String {
         val option = "True"
         return option
