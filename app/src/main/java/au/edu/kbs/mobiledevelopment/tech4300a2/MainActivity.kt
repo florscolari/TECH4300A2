@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -17,12 +18,12 @@ class MainActivity : AppCompatActivity() {
 
 
     // Setting questions by using Question class
-    private val question1 = FillGapQType(1, "Fill the gap", 4, "5 +", "= 9", "Enter a number")
-    private val question2 = TrueOfFalseQType(2, "Is this operation correct?", "False", "6 - 1 = 8","Choose between True or False")
-    private val question3 = MChoiceQType(3, "Choose the right option", "6", "What is 2 x 3?","5", "6", "4", "Choose an option")
-    private val question4 = MChoiceQType(4, "Choose the right option", "7", "What is 3 + 4?","6", "9", "7", "Choose an option")
-    private val question5 = FillGapQType(5, "Fill the gap", 3, "6 ÷ ", "= 2", "Enter a number")
-    private val question6 = TrueOfFalseQType(6, "Is this operation correct?", "True", "8 ÷ 2 = 4","Choose between True or False")
+    private val question1 = FillGapQType(1, "Fill the gap", 4, "5 +", "= 9", "💡 Enter a number")
+    private val question2 = TrueOfFalseQType(2, "Is this operation correct?", "False", "6 - 1 = 8","💡 Choose between True or False")
+    private val question3 = MChoiceQType(3, "Choose the right option", "6", "What is 2 x 3?","5", "6", "4", "💡 Choose an option")
+    private val question4 = MChoiceQType(4, "Choose the right option", "7", "What is 3 + 4?","6", "9", "7", "💡 Choose an option")
+    private val question5 = FillGapQType(5, "Fill the gap", 3, "6 ÷ ", "= 2", "💡 Enter a number")
+    private val question6 = TrueOfFalseQType(6, "Is this operation correct?", "True", "8 ÷ 2 = 4","💡Choose between True or False")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,11 +57,41 @@ class MainActivity : AppCompatActivity() {
         val q2BtnFalse = findViewById<RadioButton>(R.id.q2BtnFalse)
         val q2Feedback = findViewById<TextView>(R.id.q2Feedback)
 
+
         q2Number.text = question2.getNumber().toString()
         q2Label.text = question2.getLabel()
         q2OperationText.text = question2.getOperationText()
         q2BtnTrue.text = question2.getTrueOption()
         q2BtnFalse.text = question2.getFalseOption()
+
+        // Experimental section to use 2 rectangular buttons instead of default radio buttons
+        fun setButtonColor(button: RadioButton, colorResId: Int) {
+            val shape = ContextCompat.getDrawable(this, R.drawable.btncontainer)
+            val color = ContextCompat.getColor(this, colorResId)
+            shape?.setTint(color)
+            button.background = shape
+        }
+
+        // setting default colors Green & Red
+        setButtonColor(q2BtnTrue, R.color.colorGreen)
+        setButtonColor(q2BtnFalse, R.color.colorRed)
+
+        // changing color when each of them is clicked
+        q2BtnTrue.setOnClickListener {
+            q2BtnTrue.isChecked = true
+            q2BtnFalse.isChecked = false
+
+            setButtonColor(q2BtnTrue, R.color.colorGreenSelected)
+            setButtonColor(q2BtnFalse, R.color.colorRed)
+        }
+
+        q2BtnFalse.setOnClickListener {
+            q2BtnTrue.isChecked = false
+            q2BtnFalse.isChecked = true
+
+            setButtonColor(q2BtnTrue, R.color.colorGreen)
+            setButtonColor(q2BtnFalse, R.color.colorRedSelected)
+        }
 
 
         // Q3 Multiple Choice: Taking all UI elements to be used for a question object Q3
