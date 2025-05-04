@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">TECH4300A2</string>
 
+    <!-- Q2 & Q6 -->
     <string name="trueSelected">👉 True</string>
     <string name="falseSelected">👉 False</string>
 
+    <!-- Q3 -->
+    <string name="option1Selected">👉 5</string>
+    <string name="option2Selected">👉 6</string>
+    <string name="option3Selected">👉 4</string>
 
     <string name="submitQuiz">Check Results!</string>
     <!-- I realised while writing the set for last Q6 that is hasn't used this because it is taking directly from DOM manipulation -->

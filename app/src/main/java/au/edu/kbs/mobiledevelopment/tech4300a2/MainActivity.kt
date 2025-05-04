@@ -117,6 +117,58 @@ class MainActivity : AppCompatActivity() {
         q3BtnOption2.text = question3.getOption2()
         q3BtnOption3.text = question3.getOption3()
 
+        ////////// START
+        // Q3 setting default color Blue & Blue Selected
+        setButtonColor(q3BtnOption1, R.color.colorBlue)
+        setButtonColor(q3BtnOption2, R.color.colorBlue)
+        setButtonColor(q3BtnOption3, R.color.colorBlue)
+
+        // changing color when each of them is clicked
+        q3BtnOption1.setOnClickListener {
+            q3BtnOption1.isChecked = true
+            q3BtnOption2.isChecked = false
+            q3BtnOption3.isChecked = false
+
+            q3BtnOption1.text = getString(R.string.option1Selected) // Adding icon as selection cue
+            q3BtnOption2.text = question3.getOption2()
+            q3BtnOption3.text = question3.getOption3()
+
+            setButtonColor(q3BtnOption1, R.color.colorBlueSelected)
+            setButtonColor(q3BtnOption2, R.color.colorBlue)
+            setButtonColor(q3BtnOption3, R.color.colorBlue)
+        }
+
+        q3BtnOption2.setOnClickListener {
+            q3BtnOption1.isChecked = false
+            q3BtnOption2.isChecked = true
+            q3BtnOption3.isChecked = false
+
+            q3BtnOption1.text = question3.getOption1()
+            q3BtnOption2.text = getString(R.string.option2Selected) // Adding icon as selection cue
+            q3BtnOption3.text = question3.getOption3()
+
+            setButtonColor(q3BtnOption1, R.color.colorBlue)
+            setButtonColor(q3BtnOption2, R.color.colorBlueSelected)
+            setButtonColor(q3BtnOption3, R.color.colorBlue)
+        }
+
+        q3BtnOption3.setOnClickListener {
+            q3BtnOption1.isChecked = false
+            q3BtnOption2.isChecked = false
+            q3BtnOption3.isChecked = true
+
+            q3BtnOption1.text = question3.getOption1()
+            q3BtnOption2.text = question3.getOption2()
+            q3BtnOption3.text = getString(R.string.option3Selected) // Adding icon as selection cue
+
+            setButtonColor(q3BtnOption1, R.color.colorBlue)
+            setButtonColor(q3BtnOption2, R.color.colorBlue)
+            setButtonColor(q3BtnOption3, R.color.colorBlueSelected)
+        }
+
+        /////////// END
+
+
         // Q4 Multiple Choice: Taking all UI elements to be used for a question object Q4
         val q4Number = findViewById<TextView>(R.id.q4Number)
         val q4Label = findViewById<TextView>(R.id.q4Label)
@@ -282,16 +334,16 @@ class MainActivity : AppCompatActivity() {
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Storing & Checking user input values from user input elements
-            //todo: check RawAnswer for 2, 3, 4 & 6
+            //todo: check RawAnswer for  3, 4
             val q1SelectedAnswer = q1CheckAnswer()
             val q2RawAnswer = q2CheckAnswer()
-            val q3SelectedAnswer = q3CheckAnswer()
+            val q3RawAnswer = q3CheckAnswer()
             val q4SelectedAnswer = q4CheckAnswer()
             val q5SelectedAnswer = q5CheckAnswer()
             val q6RawAnswer = q6CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2RawAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6RawAnswer == null) {
+            if (q1SelectedAnswer == null || q2RawAnswer == null || q3RawAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6RawAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
@@ -302,7 +354,7 @@ class MainActivity : AppCompatActivity() {
                 return text.replace("👉", "").trim()
             }
             val q2SelectedAnswer = cleanAnswer(q2RawAnswer)
-            //val q3SelectedAnswer = cleanAnswer(q4RawAnswer)
+            val q3SelectedAnswer = cleanAnswer(q3RawAnswer)
             //val q4SelectedAnswer = cleanAnswer(q4RawAnswer)
             val q6SelectedAnswer = cleanAnswer(q6RawAnswer)
 
