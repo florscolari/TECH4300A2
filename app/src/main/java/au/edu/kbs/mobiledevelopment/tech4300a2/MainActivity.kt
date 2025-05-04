@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             button.background = shape
         }
 
-        // setting default colors Green & Red
+        // Q2 setting default colors Green & Red
         setButtonColor(q2BtnTrue, R.color.colorGreen)
         setButtonColor(q2BtnFalse, R.color.colorRed)
 
@@ -159,6 +159,36 @@ class MainActivity : AppCompatActivity() {
         q6OperationText.text = question6.getOperationText()
         q6BtnTrue.text = question6.getTrueOption()
         q6BtnFalse.text = question6.getFalseOption()
+
+        // Q6 setting default colors Green & Red
+        setButtonColor(q6BtnTrue, R.color.colorGreen)
+        setButtonColor(q6BtnFalse, R.color.colorRed)
+
+        // changing color when each of them is clicked
+        q6BtnTrue.setOnClickListener {
+            q6BtnTrue.isChecked = true
+            q6BtnFalse.isChecked = false
+
+            q6BtnTrue.text = getString(R.string.trueSelected) // Adding icon as selection cue
+            q6BtnFalse.text = question6.getFalseOption()
+
+            setButtonColor(q6BtnTrue, R.color.colorGreenSelected)
+            setButtonColor(q6BtnFalse, R.color.colorRed)
+        }
+
+        q6BtnFalse.setOnClickListener {
+            q6BtnTrue.isChecked = false
+            q6BtnFalse.isChecked = true
+
+            q6BtnFalse.text = getString(R.string.falseSelected)  // Adding icon as selection cue
+            q6BtnTrue.text = question6.getTrueOption()
+
+            setButtonColor(q6BtnTrue, R.color.colorGreen)
+            setButtonColor(q6BtnFalse, R.color.colorRedSelected)
+        }
+
+
+
 
         // BTN: Check Results btn
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
@@ -252,16 +282,16 @@ class MainActivity : AppCompatActivity() {
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Storing & Checking user input values from user input elements
-            //todo: check RawAnwer for 2, 3, 4 & 6
+            //todo: check RawAnswer for 2, 3, 4 & 6
             val q1SelectedAnswer = q1CheckAnswer()
             val q2RawAnswer = q2CheckAnswer()
             val q3SelectedAnswer = q3CheckAnswer()
             val q4SelectedAnswer = q4CheckAnswer()
             val q5SelectedAnswer = q5CheckAnswer()
-            val q6SelectedAnswer = q6CheckAnswer()
+            val q6RawAnswer = q6CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2RawAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6SelectedAnswer == null) {
+            if (q1SelectedAnswer == null || q2RawAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6RawAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
@@ -272,9 +302,9 @@ class MainActivity : AppCompatActivity() {
                 return text.replace("👉", "").trim()
             }
             val q2SelectedAnswer = cleanAnswer(q2RawAnswer)
-            //val q3SelectedAnswer = q3CheckAnswer()
-            //val q4SelectedAnswer = q4CheckAnswer()
-           // val q6SelectedAnswer = q6CheckAnswer()
+            //val q3SelectedAnswer = cleanAnswer(q4RawAnswer)
+            //val q4SelectedAnswer = cleanAnswer(q4RawAnswer)
+            val q6SelectedAnswer = cleanAnswer(q6RawAnswer)
 
 
 

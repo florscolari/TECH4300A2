@@ -3,9 +3,9 @@
 
     <string name="trueSelected">👉 True</string>
     <string name="falseSelected">👉 False</string>
-    <string name="trueClean">True</string>
-    <string name="falseClean">False</string>
 
+
+    <string name="submitQuiz">Check Results!</string>
     <!-- I realised while writing the set for last Q6 that is hasn't used this because it is taking directly from DOM manipulation -->
     <!-- Q1 -->
     <string name="q1Number">0</string>

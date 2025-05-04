@@ -481,12 +481,13 @@
                 android:id="@+id/card6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
                 android:padding="16dp"
+                android:background="@color/colorPurple"
                 app:layout_constraintTop_toBottomOf="@+id/matCard5">
 
                 <TextView
                     android:id="@+id/q6Number"
+                    style="@style/heading1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
@@ -498,6 +499,7 @@
 
                 <TextView
                     android:id="@+id/q6Label"
+                    style="@style/heading1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/q2Label"
@@ -508,6 +510,7 @@
                     android:id="@+id/q6OperationText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/question"
                     android:text="@string/q2OperationText"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/q6Label" />
@@ -524,15 +527,20 @@
 
                     <RadioButton
                         android:id="@+id/q6BtnTrue"
+                        style="@style/btnTrue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:button="@null"
                         android:text="@string/q2BtnTrue"
+                        android:layout_marginEnd="8dp"
                         tools:ignore="DuplicateSpeakableTextCheck" />
 
                     <RadioButton
                         android:id="@+id/q6BtnFalse"
+                        style="@style/btnFalse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:button="@null"
                         android:text="@string/q2BtnFalse"
                         tools:ignore="DuplicateSpeakableTextCheck" />
                 </RadioGroup>
@@ -541,6 +549,7 @@
                     android:id="@+id/q6Feedback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/feedback"
                     android:text="@string/q2Feedback"
                     app:layout_constraintTop_toBottomOf="@id/q6BtnGroup"
                     app:layout_constraintBottom_toBottomOf="@id/card6"
@@ -553,12 +562,13 @@
 
         <Button
             android:id="@+id/btn_goto_second_activity"
+            style="@style/submitBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:paddingLeft="32dp"
             android:paddingRight="32dp"
-            android:text="Check results"
+            android:text="@string/submitQuiz"
             app:layout_constraintTop_toBottomOf="@+id/matCard6"
             app:layout_constraintBottom_toBottomOf="@+id/main"
             app:layout_constraintEnd_toEndOf="parent"
