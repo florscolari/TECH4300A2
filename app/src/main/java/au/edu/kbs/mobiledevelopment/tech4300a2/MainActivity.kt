@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         q3BtnOption2.text = question3.getOption2()
         q3BtnOption3.text = question3.getOption3()
 
-        ////////// START
+        ////////// Q3 START Radio button changes
         // Q3 setting default color Blue & Blue Selected
         setButtonColor(q3BtnOption1, R.color.colorBlue)
         setButtonColor(q3BtnOption2, R.color.colorBlue)
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
             q3BtnOption2.isChecked = false
             q3BtnOption3.isChecked = false
 
-            q3BtnOption1.text = getString(R.string.option1Selected) // Adding icon as selection cue
+            q3BtnOption1.text = getString(R.string.q3Option1Selected) // Adding icon as selection cue
             q3BtnOption2.text = question3.getOption2()
             q3BtnOption3.text = question3.getOption3()
 
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity() {
             q3BtnOption3.isChecked = false
 
             q3BtnOption1.text = question3.getOption1()
-            q3BtnOption2.text = getString(R.string.option2Selected) // Adding icon as selection cue
+            q3BtnOption2.text = getString(R.string.q3Option2Selected) // Adding icon as selection cue
             q3BtnOption3.text = question3.getOption3()
 
             setButtonColor(q3BtnOption1, R.color.colorBlue)
@@ -159,14 +159,13 @@ class MainActivity : AppCompatActivity() {
 
             q3BtnOption1.text = question3.getOption1()
             q3BtnOption2.text = question3.getOption2()
-            q3BtnOption3.text = getString(R.string.option3Selected) // Adding icon as selection cue
+            q3BtnOption3.text = getString(R.string.q3Option3Selected) // Adding icon as selection cue
 
             setButtonColor(q3BtnOption1, R.color.colorBlue)
             setButtonColor(q3BtnOption2, R.color.colorBlue)
             setButtonColor(q3BtnOption3, R.color.colorBlueSelected)
         }
-
-        /////////// END
+        ////////// Q3 END Radio button changes
 
 
         // Q4 Multiple Choice: Taking all UI elements to be used for a question object Q4
@@ -184,6 +183,58 @@ class MainActivity : AppCompatActivity() {
         q4BtnOption1.text = question4.getOption1()
         q4BtnOption2.text = question4.getOption2()
         q4BtnOption3.text = question4.getOption3()
+
+        ////////// Q4 START Radio button changes
+        // Q4 setting default color Blue & Blue Selected
+        setButtonColor(q4BtnOption1, R.color.colorBlue)
+        setButtonColor(q4BtnOption2, R.color.colorBlue)
+        setButtonColor(q4BtnOption3, R.color.colorBlue)
+
+        // changing color when each of them is clicked
+        q4BtnOption1.setOnClickListener {
+            q4BtnOption1.isChecked = true
+            q4BtnOption2.isChecked = false
+            q4BtnOption3.isChecked = false
+
+            q4BtnOption1.text = getString(R.string.q4Option1Selected) // Adding icon as selection cue
+            q4BtnOption2.text = question4.getOption2()
+            q4BtnOption3.text = question4.getOption3()
+
+            setButtonColor(q4BtnOption1, R.color.colorBlueSelected)
+            setButtonColor(q4BtnOption2, R.color.colorBlue)
+            setButtonColor(q4BtnOption3, R.color.colorBlue)
+        }
+
+        q4BtnOption2.setOnClickListener {
+            q4BtnOption1.isChecked = false
+            q4BtnOption2.isChecked = true
+            q4BtnOption3.isChecked = false
+
+            q4BtnOption1.text = question4.getOption1()
+            q4BtnOption2.text = getString(R.string.q4Option2Selected) // Adding icon as selection cue
+            q4BtnOption3.text = question4.getOption3()
+
+            setButtonColor(q4BtnOption1, R.color.colorBlue)
+            setButtonColor(q4BtnOption2, R.color.colorBlueSelected)
+            setButtonColor(q4BtnOption3, R.color.colorBlue)
+        }
+
+        q4BtnOption3.setOnClickListener {
+            q4BtnOption1.isChecked = false
+            q4BtnOption2.isChecked = false
+            q4BtnOption3.isChecked = true
+
+            q4BtnOption1.text = question4.getOption1()
+            q4BtnOption2.text = question4.getOption2()
+            q4BtnOption3.text = getString(R.string.q4Option3Selected) // Adding icon as selection cue
+
+            setButtonColor(q4BtnOption1, R.color.colorBlue)
+            setButtonColor(q4BtnOption2, R.color.colorBlue)
+            setButtonColor(q4BtnOption3, R.color.colorBlueSelected)
+        }
+        ////////// Q4 END Radio button changes
+
+
 
         // Q5 Fill the gap: Taking all UI elements to be used for a question object Q5
         val q5Number = findViewById<TextView>(R.id.q5Number)
@@ -238,8 +289,6 @@ class MainActivity : AppCompatActivity() {
             setButtonColor(q6BtnTrue, R.color.colorGreen)
             setButtonColor(q6BtnFalse, R.color.colorRedSelected)
         }
-
-
 
 
         // BTN: Check Results btn
@@ -334,20 +383,19 @@ class MainActivity : AppCompatActivity() {
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Storing & Checking user input values from user input elements
-            //todo: check RawAnswer for  3, 4
             val q1SelectedAnswer = q1CheckAnswer()
             val q2RawAnswer = q2CheckAnswer()
             val q3RawAnswer = q3CheckAnswer()
-            val q4SelectedAnswer = q4CheckAnswer()
+            val q4RawAnswer = q4CheckAnswer()
             val q5SelectedAnswer = q5CheckAnswer()
             val q6RawAnswer = q6CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2RawAnswer == null || q3RawAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6RawAnswer == null) {
+            if (q1SelectedAnswer == null || q2RawAnswer == null || q3RawAnswer == null || q4RawAnswer == null || q5SelectedAnswer == null || q6RawAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
-            //todo: apply all this after creating logic for selection
+
 
             // CLEAN non-numerical questions before sending data
             fun cleanAnswer(text:String): String {
@@ -355,7 +403,7 @@ class MainActivity : AppCompatActivity() {
             }
             val q2SelectedAnswer = cleanAnswer(q2RawAnswer)
             val q3SelectedAnswer = cleanAnswer(q3RawAnswer)
-            //val q4SelectedAnswer = cleanAnswer(q4RawAnswer)
+            val q4SelectedAnswer = cleanAnswer(q4RawAnswer)
             val q6SelectedAnswer = cleanAnswer(q6RawAnswer)
 
 

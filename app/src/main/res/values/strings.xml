@@ -6,9 +6,14 @@
     <string name="falseSelected">👉 False</string>
 
     <!-- Q3 -->
-    <string name="option1Selected">👉 5</string>
-    <string name="option2Selected">👉 6</string>
-    <string name="option3Selected">👉 4</string>
+    <string name="q3Option1Selected">👉 5</string>
+    <string name="q3Option2Selected">👉 6</string>
+    <string name="q3Option3Selected">👉 4</string>
+
+    <!-- Q4 -->
+    <string name="q4Option1Selected">👉 6</string>
+    <string name="q4Option2Selected">👉 9</string>
+    <string name="q4Option3Selected">👉 7</string>
 
     <string name="submitQuiz">Check Results!</string>
     <!-- I realised while writing the set for last Q6 that is hasn't used this because it is taking directly from DOM manipulation -->
