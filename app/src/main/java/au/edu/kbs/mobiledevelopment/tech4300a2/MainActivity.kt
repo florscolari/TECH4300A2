@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val question3 = MChoiceQType(3, "Choose the right option", "6", "What is 2 x 3?","5", "6", "4", "Choose an option")
     private val question4 = MChoiceQType(4, "Choose the right option", "7", "What is 3 + 4?","6", "9", "7", "Choose an option")
     private val question5 = FillGapQType(5, "Fill the gap", 3, "6 ÷ ", "= 2", "Enter a number")
+    private val question6 = TrueOfFalseQType(6, "Is this operation correct?", "True", "8 ÷ 2 = 4","Choose between True or False")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +52,8 @@ class MainActivity : AppCompatActivity() {
         val q2Number = findViewById<TextView>(R.id.q2Number)
         val q2Label = findViewById<TextView>(R.id.q2Label)
         val q2OperationText = findViewById<TextView>(R.id.q2OperationText)
-        val q2BtnTrue = findViewById<RadioButton>(R.id.btnTrue)
-        val q2BtnFalse = findViewById<RadioButton>(R.id.btnFalse)
+        val q2BtnTrue = findViewById<RadioButton>(R.id.q2BtnTrue)
+        val q2BtnFalse = findViewById<RadioButton>(R.id.q2BtnFalse)
         val q2Feedback = findViewById<TextView>(R.id.q2Feedback)
 
         q2Number.text = question2.getNumber().toString()
@@ -106,6 +107,20 @@ class MainActivity : AppCompatActivity() {
         q5Label.text = question5.getLabel()
         q5OpText1.text = question5.getOpText1()
         q5OpText2.text = question5.getOpText2()
+
+        // Q6 True or False: Taking all UI elements to be used for a question object Q6
+        val q6Number = findViewById<TextView>(R.id.q6Number)
+        val q6Label = findViewById<TextView>(R.id.q6Label)
+        val q6OperationText = findViewById<TextView>(R.id.q6OperationText)
+        val q6BtnTrue = findViewById<RadioButton>(R.id.q6BtnTrue)
+        val q6BtnFalse = findViewById<RadioButton>(R.id.q6BtnFalse)
+        val q6Feedback = findViewById<TextView>(R.id.q6Feedback)
+
+        q6Number.text = question6.getNumber().toString()
+        q6Label.text = question6.getLabel()
+        q6OperationText.text = question6.getOperationText()
+        q6BtnTrue.text = question6.getTrueOption()
+        q6BtnFalse.text = question6.getFalseOption()
 
         // BTN: Check Results btn
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
@@ -180,6 +195,19 @@ class MainActivity : AppCompatActivity() {
                 null
             }
         }
+        fun q6CheckAnswer() : String? {
+            // To check Question 6
+            return if (q6BtnTrue.isChecked) {
+                q6Feedback.text = "" // trick to clear previous feedback message
+                q6BtnTrue.text.toString()
+            } else if (q6BtnFalse.isChecked) {
+                q6Feedback.text = ""
+                q6BtnFalse.text.toString()
+            } else {
+                q6Feedback.text = question6.getFeedback()
+                null
+            }
+        }
 
 
 
@@ -193,9 +221,10 @@ class MainActivity : AppCompatActivity() {
             val q3SelectedAnswer = q3CheckAnswer()
             val q4SelectedAnswer = q4CheckAnswer()
             val q5SelectedAnswer = q5CheckAnswer()
+            val q6SelectedAnswer = q6CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null) {
+            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6SelectedAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
@@ -211,6 +240,8 @@ class MainActivity : AppCompatActivity() {
             mainToSecond.putExtra("Q4_USER_ANSWER", q4SelectedAnswer)
             mainToSecond.putExtra("Q5_CORRECT_ANSWER", question5.getAnswer())
             mainToSecond.putExtra("Q5_USER_ANSWER", q5SelectedAnswer)
+            mainToSecond.putExtra("Q6_CORRECT_ANSWER", question6.getAnswer())
+            mainToSecond.putExtra("Q6_USER_ANSWER", q6SelectedAnswer)
             startActivity(mainToSecond)
         }
     }

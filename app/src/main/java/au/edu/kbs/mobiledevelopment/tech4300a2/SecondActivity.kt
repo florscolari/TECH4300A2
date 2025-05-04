@@ -43,7 +43,7 @@ class SecondActivity : AppCompatActivity() {
 
         // Retrieving data from Main Activity
         val i = intent
-        val q1CorrectAnswer = i.getIntExtra("Q1_CORRECT_ANSWER", -1) // must come as Int to be compared
+        val q1CorrectAnswer = i.getIntExtra("Q1_CORRECT_ANSWER", -1) // Fill the gap type, must come as Int to be compared
         val q1Answer = i.getStringExtra("Q1_USER_ANSWER")?.toInt()
         val q2CorrectAnswer = i.getStringExtra("Q2_CORRECT_ANSWER")
         val q2Answer = i.getStringExtra("Q2_USER_ANSWER")
@@ -53,6 +53,8 @@ class SecondActivity : AppCompatActivity() {
         val q4Answer = i.getStringExtra("Q4_USER_ANSWER")
         val q5CorrectAnswer = i.getIntExtra("Q5_CORRECT_ANSWER", -1) // must come as Int to be compared
         val q5Answer = i.getStringExtra("Q5_USER_ANSWER")?.toInt()
+        val q6CorrectAnswer = i.getStringExtra("Q6_CORRECT_ANSWER")
+        val q6Answer = i.getStringExtra("Q6_USER_ANSWER")
 
 
         // Q1: Check data & evaluate results
@@ -107,6 +109,17 @@ class SecondActivity : AppCompatActivity() {
             marks += 1
         } else {
             q5Result = "Incorrect"
+            wrongAnswers += 1
+        }
+
+        // Q6: Check data & evaluate results
+        val q6Result: String
+        if (q6Answer == q6CorrectAnswer) {
+            q6Result = "Correct"
+            totalScore += 1
+            marks += 1
+        } else {
+            q6Result = "Incorrect"
             wrongAnswers += 1
         }
 

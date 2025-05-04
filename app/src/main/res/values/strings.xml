@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TECH4300A2</string>
 
+    <!-- I realised while writing the set for last Q6 that is hasn't used this because it is taking directly from DOM manipulation -->
     <!-- Q1 -->
     <string name="q1Number">0</string>
     <string name="q1Label">Label</string>
@@ -42,5 +43,13 @@
     <string name="q5OpText1">Text 1</string>
     <string name="q5OpText2">Text 2</string>
     <string name="q5Feedback" />
+
+    <!-- Q6 -->
+    <string name="q6Number">0</string>
+    <string name="q6Label">Label</string>
+    <string name="q6OperationText">Operation Text</string>
+    <string name="q6BtnTrue">True</string>
+    <string name="q6BtnFalse">False</string>
+    <string name="q6Feedback" />
 
 </resources>
