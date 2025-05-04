@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     // Setting questions by using Question class
     private val question1 = FillGapQType(1, "Fill the gap", 4, "5 +", "= 9", "Enter a number")
     private val question2 = TrueOfFalseQType(2, "Is this operation correct?", "False", "6 - 1 = 8","Choose between True or False")
-    private val question3 = MChoiceQType(3, "Choose the right option", "6", "What is 2 x 3?","5", "6", "4", "Choose one option")
+    private val question3 = MChoiceQType(3, "Choose the right option", "6", "What is 2 x 3?","5", "6", "4", "Choose an option")
+    private val question4 = MChoiceQType(4, "Choose the right option", "7", "What is 3 + 4?","6", "9", "7", "Choose an option")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Taking all UI elements to be used for a question object Q1
+        // Q1: Taking all UI elements to be used for a question object Q1
         val q1Number = findViewById<TextView>(R.id.q1Number)
         val q1Label = findViewById<TextView>(R.id.q1Label)
         val q1OpText1 = findViewById<TextView>(R.id.q1OpText1)
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // Taking all UI elements to be used for a question object Q2
+        // Q2: Taking all UI elements to be used for a question object Q2
         val q2Number = findViewById<TextView>(R.id.q2Number)
         val q2Label = findViewById<TextView>(R.id.q2Label)
         val q2OperationText = findViewById<TextView>(R.id.q2OperationText)
@@ -79,9 +80,7 @@ class MainActivity : AppCompatActivity() {
         q2BtnFalse.text = question2.getFalseOption()
 
 
-
-
-        // Taking all UI elements to be used for a question object Q3
+        // Q3: Taking all UI elements to be used for a question object Q3
         val q3Number = findViewById<TextView>(R.id.q3Number)
         val q3Label = findViewById<TextView>(R.id.q3Label)
         val q3OperationText = findViewById<TextView>(R.id.q3OperationText)
@@ -97,15 +96,28 @@ class MainActivity : AppCompatActivity() {
         q3BtnOption2.text = question3.getOption2()
         q3BtnOption3.text = question3.getOption3()
 
+        // Q4: Taking all UI elements to be used for a question object Q4
+        val q4Number = findViewById<TextView>(R.id.q4Number)
+        val q4Label = findViewById<TextView>(R.id.q4Label)
+        val q4OperationText = findViewById<TextView>(R.id.q4OperationText)
+        val q4BtnOption1 = findViewById<RadioButton>(R.id.q4btnOption1)
+        val q4BtnOption2 = findViewById<RadioButton>(R.id.q4btnOption2)
+        val q4BtnOption3 = findViewById<RadioButton>(R.id.q4btnOption3)
+        val q4Feedback = findViewById<TextView>(R.id.q4Feedback)
+
+        q4Number.text = question4.getNumber().toString()
+        q4Label.text = question4.getLabel()
+        q4OperationText.text = question4.getOperationText()
+        q4BtnOption1.text = question4.getOption1()
+        q4BtnOption2.text = question4.getOption2()
+        q4BtnOption3.text = question4.getOption3()
 
 
+        // BTN: Check Results btn
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
 
 
-
-
-
-
+        // Checking Answers before passing data to the second activity
         fun q2CheckAnswer() : String? {
             // To check Question 2
             return if (q2BtnTrue.isChecked) {
@@ -135,6 +147,24 @@ class MainActivity : AppCompatActivity() {
                 null
             }
         }
+        fun q4CheckAnswer() : String? {
+            // To check Question 4
+            return if (q4BtnOption1.isChecked) {
+                q4Feedback.text = "" // trick to clear previous feedback message
+                q4BtnOption1.text.toString()
+            } else if (q4BtnOption2.isChecked) {
+                q4Feedback.text = ""
+                q4BtnOption2.text.toString()
+            } else if (q4BtnOption3.isChecked) {
+                q4Feedback.text = ""
+                q4BtnOption3.text.toString()
+            } else {
+                q4Feedback.text = question4.getFeedback()
+                null
+            }
+        }
+
+
 
 
 
@@ -145,9 +175,10 @@ class MainActivity : AppCompatActivity() {
             val q1SelectedAnswer = q1CheckAnswer()
             val q2SelectedAnswer = q2CheckAnswer()
             val q3SelectedAnswer = q3CheckAnswer()
+            val q4SelectedAnswer = q4CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null) {
+            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
@@ -159,6 +190,8 @@ class MainActivity : AppCompatActivity() {
             mainToSecond.putExtra("Q2_USER_ANSWER", q2SelectedAnswer)
             mainToSecond.putExtra("Q3_CORRECT_ANSWER", question3.getAnswer())
             mainToSecond.putExtra("Q3_USER_ANSWER", q3SelectedAnswer)
+            mainToSecond.putExtra("Q4_CORRECT_ANSWER", question4.getAnswer())
+            mainToSecond.putExtra("Q4_USER_ANSWER", q4SelectedAnswer)
             startActivity(mainToSecond)
         }
     }

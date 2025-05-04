@@ -114,7 +114,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/matCard1">
 
-
             <!--START Card 2 using a ConstraintLayout -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/card2"
@@ -201,7 +200,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/matCard2">
 
-
             <!--START Card 3 using a ConstraintLayout -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/card3"
@@ -237,7 +235,6 @@
                     android:text="@string/q2OperationText"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/q3Label" />
-
 
                 <RadioGroup
                     android:id="@+id/q3BtnGroup"
@@ -279,7 +276,94 @@
             <!-- END Card 3 -->
         </com.google.android.material.card.MaterialCardView>
         <!-- END Material Card 3 as wrapper -->
+        <!-- START Material card 3 as wrapper -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/matCard4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matCard3">
 
+            <!--START Card 4 using a ConstraintLayout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/matCard3">
+
+                <TextView
+                    android:id="@+id/q4Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/q2Number"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/q4Label"
+                    app:layout_constraintEnd_toStartOf="@+id/q4Label"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/q4Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2Label"
+                    app:layout_constraintStart_toEndOf="@+id/q4Number"
+                    app:layout_constraintTop_toTopOf="@id/card4" />
+
+                <TextView
+                    android:id="@+id/q4OperationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2OperationText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/q4Label" />
+
+                <RadioGroup
+                    android:id="@+id/q4BtnGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/q4OperationText">
+
+                    <RadioButton
+                        android:id="@+id/q4btnOption1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/q2BtnFalse" />
+
+                    <RadioButton
+                        android:id="@+id/q4btnOption2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/q2BtnTrue" />
+
+                    <RadioButton
+                        android:id="@+id/q4btnOption3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/q2BtnFalse" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/q4Feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2Feedback"
+                    app:layout_constraintTop_toBottomOf="@id/q4BtnGroup"
+                    app:layout_constraintBottom_toBottomOf="@id/card4"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- END Card 4 -->
+        </com.google.android.material.card.MaterialCardView>
+        <!-- END Material Card 4 as wrapper -->
 
         <Button
             android:id="@+id/btn_goto_second_activity"
@@ -289,7 +373,7 @@
             android:paddingLeft="32dp"
             android:paddingRight="32dp"
             android:text="Check results"
-            app:layout_constraintTop_toBottomOf="@+id/matCard3"
+            app:layout_constraintTop_toBottomOf="@+id/matCard4"
             app:layout_constraintBottom_toBottomOf="@+id/main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

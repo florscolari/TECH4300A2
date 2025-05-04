@@ -2,7 +2,7 @@
     <string name="app_name">TECH4300A2</string>
 
     <!-- Q1 -->
-    <string name="q1Number">1</string>
+    <string name="q1Number">0</string>
     <string name="q1Label">Label</string>
     <string name="q1OperationText">Operation Text</string>
     <string name="q1OpText1">Text 1</string>
@@ -10,7 +10,7 @@
     <string name="q1Feedback" />
 
     <!-- Q2 -->
-    <string name="q2Number">2</string>
+    <string name="q2Number">0</string>
     <string name="q2Label">Label</string>
     <string name="q2OperationText">Operation Text</string>
     <string name="q2BtnTrue">True</string>
@@ -18,12 +18,21 @@
     <string name="q2Feedback" />
 
     <!-- Q3 -->
-    <string name="q3Number">2</string>
+    <string name="q3Number">0</string>
     <string name="q3Label">Label</string>
     <string name="q3OperationText">Operation Text</string>
-    <string name="q3BtnOption1">False</string>
-    <string name="q3BtnOption2">False</string>
-    <string name="q3BtnOption3">False</string>
+    <string name="q3BtnOption1">Opt1</string>
+    <string name="q3BtnOption2">Opt2</string>
+    <string name="q3BtnOption3">Opt3</string>
     <string name="q3Feedback" />
+
+    <!-- Q4 -->
+    <string name="q4Number">0</string>
+    <string name="q4Label">Label</string>
+    <string name="q4OperationText">Operation Text</string>
+    <string name="q4BtnOption1">Opt1</string>
+    <string name="q4BtnOption2">Opt2</string>
+    <string name="q4BtnOption3">Opt3</string>
+    <string name="q4Feedback" />
 
 </resources>

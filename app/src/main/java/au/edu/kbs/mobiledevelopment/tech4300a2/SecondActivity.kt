@@ -49,6 +49,8 @@ class SecondActivity : AppCompatActivity() {
         val q2Answer = i.getStringExtra("Q2_USER_ANSWER")
         val q3CorrectAnswer = i.getStringExtra("Q3_CORRECT_ANSWER")
         val q3Answer = i.getStringExtra("Q3_USER_ANSWER")
+        val q4CorrectAnswer = i.getStringExtra("Q4_CORRECT_ANSWER")
+        val q4Answer = i.getStringExtra("Q4_USER_ANSWER")
 
 
 
@@ -82,6 +84,17 @@ class SecondActivity : AppCompatActivity() {
             marks += 1
         } else {
             q3Result = "Incorrect"
+            wrongAnswers += 1
+        }
+
+        // Q4: Check data & evaluate results
+        val q4Result: String
+        if (q4Answer?.trim()?.uppercase() == q4CorrectAnswer?.trim()?.uppercase()) { // to safely compare both strings
+            q4Result = "Correct"
+            totalScore += 1
+            marks += 1
+        } else {
+            q4Result = "Incorrect"
             wrongAnswers += 1
         }
 
