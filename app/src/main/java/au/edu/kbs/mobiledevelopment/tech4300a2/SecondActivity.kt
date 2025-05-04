@@ -62,7 +62,7 @@ class SecondActivity : AppCompatActivity() {
 
         // Q2: Check data & evaluate results
         val q2Result: String
-        if (q2Answer == q2CorrectAnswer) {
+        if (q2Answer?.trim()?.uppercase() == q2CorrectAnswer?.trim()?.uppercase()) { // to safely compare both strings
             q2Result = "Correct"
             totalScore += 1
             marks += 1
@@ -70,6 +70,7 @@ class SecondActivity : AppCompatActivity() {
             q2Result = "Incorrect"
             wrongAnswers += 1
         }
+
 
 
 
