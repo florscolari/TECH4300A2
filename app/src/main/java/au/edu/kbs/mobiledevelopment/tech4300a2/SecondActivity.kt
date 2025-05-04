@@ -51,7 +51,8 @@ class SecondActivity : AppCompatActivity() {
         val q3Answer = i.getStringExtra("Q3_USER_ANSWER")
         val q4CorrectAnswer = i.getStringExtra("Q4_CORRECT_ANSWER")
         val q4Answer = i.getStringExtra("Q4_USER_ANSWER")
-
+        val q5CorrectAnswer = i.getIntExtra("Q5_CORRECT_ANSWER", -1) // must come as Int to be compared
+        val q5Answer = i.getStringExtra("Q5_USER_ANSWER")?.toInt()
 
 
         // Q1: Check data & evaluate results
@@ -98,7 +99,16 @@ class SecondActivity : AppCompatActivity() {
             wrongAnswers += 1
         }
 
-
+        // Q5: Check data & evaluate results
+        val q5Result: String
+        if (q5Answer == q5CorrectAnswer) {
+            q5Result = "Correct"
+            totalScore += 1
+            marks += 1
+        } else {
+            q5Result = "Incorrect"
+            wrongAnswers += 1
+        }
 
 
         // Displaying total score as percentage

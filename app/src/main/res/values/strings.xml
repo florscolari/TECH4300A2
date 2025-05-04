@@ -35,4 +35,12 @@
     <string name="q4BtnOption3">Opt3</string>
     <string name="q4Feedback" />
 
+    <!-- Q5 -->
+    <string name="q5Number">0</string>
+    <string name="q5Label">Label</string>
+    <string name="q5OperationText">Operation Text</string>
+    <string name="q5OpText1">Text 1</string>
+    <string name="q5OpText2">Text 2</string>
+    <string name="q5Feedback" />
+
 </resources>

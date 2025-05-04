@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val question2 = TrueOfFalseQType(2, "Is this operation correct?", "False", "6 - 1 = 8","Choose between True or False")
     private val question3 = MChoiceQType(3, "Choose the right option", "6", "What is 2 x 3?","5", "6", "4", "Choose an option")
     private val question4 = MChoiceQType(4, "Choose the right option", "7", "What is 3 + 4?","6", "9", "7", "Choose an option")
-
+    private val question5 = FillGapQType(5, "Fill the gap", 3, "6 ÷ ", "= 2", "Enter a number")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,45 +33,27 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Q1: Taking all UI elements to be used for a question object Q1
+        // Q1 Fill the gap: Taking all UI elements to be used for a question object Q1
         val q1Number = findViewById<TextView>(R.id.q1Number)
         val q1Label = findViewById<TextView>(R.id.q1Label)
         val q1OpText1 = findViewById<TextView>(R.id.q1OpText1)
         val q1OpText2 = findViewById<TextView>(R.id.q1OpText2)
         val q1Feedback = findViewById<TextView>(R.id.q1Feedback)
+        val q1Answer = findViewById<EditText>(R.id.q1UserValue) // Taking value from user input
 
         q1Number.text = question1.getNumber().toString()
         q1Label.text = question1.getLabel()
         q1OpText1.text = question1.getOpText1()
         q1OpText2.text = question1.getOpText2()
 
-        val q1Answer = findViewById<EditText>(R.id.q1UserValue)
 
-
-        fun q1CheckAnswer() : String? {
-            // To check Question 1
-            val answerText = q1Answer.text.toString()
-            return if (answerText.isNotEmpty()) {
-                q1Feedback.text = "" // trick to clear previous feedback message
-                answerText
-            } else {
-                q1Feedback.text = question1.getFeedback()
-                null// it's working!!
-            }
-        }
-
-
-
-
-
-        // Q2: Taking all UI elements to be used for a question object Q2
+        // Q2 True or False: Taking all UI elements to be used for a question object Q2
         val q2Number = findViewById<TextView>(R.id.q2Number)
         val q2Label = findViewById<TextView>(R.id.q2Label)
         val q2OperationText = findViewById<TextView>(R.id.q2OperationText)
         val q2BtnTrue = findViewById<RadioButton>(R.id.btnTrue)
         val q2BtnFalse = findViewById<RadioButton>(R.id.btnFalse)
         val q2Feedback = findViewById<TextView>(R.id.q2Feedback)
-
 
         q2Number.text = question2.getNumber().toString()
         q2Label.text = question2.getLabel()
@@ -80,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         q2BtnFalse.text = question2.getFalseOption()
 
 
-        // Q3: Taking all UI elements to be used for a question object Q3
+        // Q3 Multiple Choice: Taking all UI elements to be used for a question object Q3
         val q3Number = findViewById<TextView>(R.id.q3Number)
         val q3Label = findViewById<TextView>(R.id.q3Label)
         val q3OperationText = findViewById<TextView>(R.id.q3OperationText)
@@ -96,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         q3BtnOption2.text = question3.getOption2()
         q3BtnOption3.text = question3.getOption3()
 
-        // Q4: Taking all UI elements to be used for a question object Q4
+        // Q4 Multiple Choice: Taking all UI elements to be used for a question object Q4
         val q4Number = findViewById<TextView>(R.id.q4Number)
         val q4Label = findViewById<TextView>(R.id.q4Label)
         val q4OperationText = findViewById<TextView>(R.id.q4OperationText)
@@ -112,12 +94,36 @@ class MainActivity : AppCompatActivity() {
         q4BtnOption2.text = question4.getOption2()
         q4BtnOption3.text = question4.getOption3()
 
+        // Q5 Fill the gap: Taking all UI elements to be used for a question object Q5
+        val q5Number = findViewById<TextView>(R.id.q5Number)
+        val q5Label = findViewById<TextView>(R.id.q5Label)
+        val q5OpText1 = findViewById<TextView>(R.id.q5OpText1)
+        val q5OpText2 = findViewById<TextView>(R.id.q5OpText2)
+        val q5Feedback = findViewById<TextView>(R.id.q5Feedback)
+        val q5Answer = findViewById<EditText>(R.id.q5UserValue) // Taking value from user input
+
+        q5Number.text = question5.getNumber().toString()
+        q5Label.text = question5.getLabel()
+        q5OpText1.text = question5.getOpText1()
+        q5OpText2.text = question5.getOpText2()
 
         // BTN: Check Results btn
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
 
 
         // Checking Answers before passing data to the second activity
+        fun q1CheckAnswer() : String? {
+            // To check Question 1
+            val answerText = q1Answer.text.toString()
+            return if (answerText.isNotEmpty()) {
+                q1Feedback.text = "" // trick to clear previous feedback message
+                answerText
+            } else {
+                q1Feedback.text = question1.getFeedback()
+                null// it's working!!
+            }
+        }
+
         fun q2CheckAnswer() : String? {
             // To check Question 2
             return if (q2BtnTrue.isChecked) {
@@ -163,7 +169,17 @@ class MainActivity : AppCompatActivity() {
                 null
             }
         }
-
+        fun q5CheckAnswer() : String? {
+            // To check Question 5
+            val answerText = q5Answer.text.toString()
+            return if (answerText.isNotEmpty()) {
+                q5Feedback.text = "" // trick to clear previous feedback message
+                answerText
+            } else {
+                q5Feedback.text = question5.getFeedback()
+                null
+            }
+        }
 
 
 
@@ -176,9 +192,10 @@ class MainActivity : AppCompatActivity() {
             val q2SelectedAnswer = q2CheckAnswer()
             val q3SelectedAnswer = q3CheckAnswer()
             val q4SelectedAnswer = q4CheckAnswer()
+            val q5SelectedAnswer = q5CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null) {
+            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
@@ -192,6 +209,8 @@ class MainActivity : AppCompatActivity() {
             mainToSecond.putExtra("Q3_USER_ANSWER", q3SelectedAnswer)
             mainToSecond.putExtra("Q4_CORRECT_ANSWER", question4.getAnswer())
             mainToSecond.putExtra("Q4_USER_ANSWER", q4SelectedAnswer)
+            mainToSecond.putExtra("Q5_CORRECT_ANSWER", question5.getAnswer())
+            mainToSecond.putExtra("Q5_USER_ANSWER", q5SelectedAnswer)
             startActivity(mainToSecond)
         }
     }
