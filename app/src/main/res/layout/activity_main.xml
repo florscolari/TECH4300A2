@@ -47,15 +47,6 @@
                 app:layout_constraintStart_toEndOf="@+id/q1Number"
                 app:layout_constraintTop_toTopOf="@id/card1" />
 
-            <TextView
-                android:id="@+id/q1Feedback"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/q1Feedback"
-                app:layout_constraintBottom_toBottomOf="@id/card1"
-                app:layout_constraintHorizontal_bias="0.4"
-                app:layout_constraintStart_toStartOf="@id/card1" />
-
 
             <TextView
                 android:id="@+id/q1OpText1"
@@ -63,11 +54,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/q1OpText1"
                 app:layout_constraintBaseline_toBaselineOf="@+id/q1UserValue"
-                app:layout_constraintBottom_toBottomOf="@id/card1"
-                app:layout_constraintHorizontal_bias="0.29"
+                app:layout_constraintTop_toBottomOf="@id/q1Label"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/q1UserValue"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:autofillHints="?"
+                android:ems="10"
+                android:inputType="number"
+                android:textColorHint="#546E7A"
+                app:layout_constraintEnd_toStartOf="@+id/q1OpText2"
+                app:layout_constraintStart_toEndOf="@+id/q1OpText1"
+                app:layout_constraintTop_toBottomOf="@+id/q1Label"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/q1OpText2"
@@ -75,111 +78,113 @@
                 android:layout_height="wrap_content"
                 android:text="@string/q1OpText2"
                 app:layout_constraintBaseline_toBaselineOf="@+id/q1UserValue"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.859"
-                app:layout_constraintStart_toEndOf="@id/q1UserValue"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintStart_toEndOf="@id/q1UserValue" />
 
+            <TextView
+                android:id="@+id/q1Feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q1Feedback"
+                app:layout_constraintBottom_toBottomOf="@id/card1"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- END Card 1 -->
 
+        <!--START Card 2 using a ConstraintLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#fff"
+            android:padding="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="@+id/vLeft"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/card1">
 
 
-    <Button
-        android:id="@+id/btn_goto_second_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to Second Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/h4"
-        tools:ignore="HardcodedText" />
-
-    <EditText
-        android:id="@+id/q1UserValue"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:autofillHints="?"
-        android:ems="10"
-
-        android:inputType="number"
-        android:textColorHint="#546E7A"
-        app:layout_constraintBottom_toTopOf="@+id/btn_goto_second_activity"
-        app:layout_constraintEnd_toStartOf="@+id/q1OpText2"
-        app:layout_constraintHorizontal_bias="0.674"
-        app:layout_constraintStart_toEndOf="@+id/q1OpText1"
-        app:layout_constraintTop_toBottomOf="@+id/q1Label"
-        app:layout_constraintVertical_bias="0.411"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/q2Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q2Number"
-        app:layout_constraintBottom_toTopOf="@+id/q2Label"
-        app:layout_constraintEnd_toStartOf="@+id/vRight"
-        app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toTopOf="@id/hTop" />
-
-    <TextView
-        android:id="@+id/q2Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q2Label"
-        app:layout_constraintBottom_toTopOf="@+id/q2OperationText"
-        app:layout_constraintEnd_toStartOf="@+id/vRight"
-        app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toBottomOf="@+id/q2Number" />
-
-    <TextView
-        android:id="@+id/q2OperationText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q2OperationText"
-        app:layout_constraintBottom_toTopOf="@+id/hBottom"
-        app:layout_constraintEnd_toStartOf="@+id/vRight"
-        app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toBottomOf="@+id/q2Label" />
-
-    <TextView
-        android:id="@+id/q2Feedback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q2Feedback"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/vRight"
-        app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toBottomOf="@+id/q2BtnGroup"
-        app:layout_constraintVertical_bias="1.0" />
+            <Button
+                android:id="@+id/btn_goto_second_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go to Second Activity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/h4"
+                tools:ignore="HardcodedText" />
 
 
-    <RadioGroup
-        android:id="@+id/q2BtnGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/vRight"
-        app:layout_constraintStart_toStartOf="@+id/vLeft"
-        app:layout_constraintTop_toBottomOf="@+id/hBottom"
 
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/q2Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q2Number"
+                app:layout_constraintBottom_toTopOf="@+id/q2Label"
+                app:layout_constraintEnd_toStartOf="@+id/vRight"
+                app:layout_constraintStart_toStartOf="@+id/vLeft"
+                app:layout_constraintTop_toTopOf="@id/hTop" />
 
-        <RadioButton
-            android:id="@+id/btnTrue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q2BtnTrue" />
+            <TextView
+                android:id="@+id/q2Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q2Label"
+                app:layout_constraintBottom_toTopOf="@+id/q2OperationText"
+                app:layout_constraintEnd_toStartOf="@+id/vRight"
+                app:layout_constraintStart_toStartOf="@+id/vLeft"
+                app:layout_constraintTop_toBottomOf="@+id/q2Number" />
 
-        <RadioButton
-            android:id="@+id/btnFalse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/q2BtnFalse"/>
-    </RadioGroup>
+            <TextView
+                android:id="@+id/q2OperationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q2OperationText"
+                app:layout_constraintBottom_toTopOf="@+id/hBottom"
+                app:layout_constraintEnd_toStartOf="@+id/vRight"
+                app:layout_constraintStart_toStartOf="@+id/vLeft"
+                app:layout_constraintTop_toBottomOf="@+id/q2Label" />
+
+            <TextView
+                android:id="@+id/q2Feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q2Feedback"
+                app:layout_constraintBottom_toTopOf="@+id/guideline5"
+                app:layout_constraintEnd_toStartOf="@+id/vRight"
+                app:layout_constraintStart_toStartOf="@+id/vLeft"
+                app:layout_constraintTop_toBottomOf="@+id/q2BtnGroup"
+                app:layout_constraintVertical_bias="1.0" />
 
 
+            <RadioGroup
+                android:id="@+id/q2BtnGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/vRight"
+                app:layout_constraintStart_toStartOf="@+id/vLeft"
+                app:layout_constraintTop_toBottomOf="@+id/hBottom"
+
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/btnTrue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2BtnTrue" />
+
+                <RadioButton
+                    android:id="@+id/btnFalse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2BtnFalse"/>
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- END Card 2 -->
 
 
 
