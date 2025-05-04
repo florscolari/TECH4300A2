@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 
+
 class MainActivity : AppCompatActivity() {
 
 
@@ -81,6 +82,9 @@ class MainActivity : AppCompatActivity() {
             q2BtnTrue.isChecked = true
             q2BtnFalse.isChecked = false
 
+            q2BtnTrue.text = getString(R.string.trueSelected) // Adding icon as selection cue
+            q2BtnFalse.text = question2.getFalseOption()
+
             setButtonColor(q2BtnTrue, R.color.colorGreenSelected)
             setButtonColor(q2BtnFalse, R.color.colorRed)
         }
@@ -88,6 +92,9 @@ class MainActivity : AppCompatActivity() {
         q2BtnFalse.setOnClickListener {
             q2BtnTrue.isChecked = false
             q2BtnFalse.isChecked = true
+
+            q2BtnFalse.text = getString(R.string.falseSelected)  // Adding icon as selection cue
+            q2BtnTrue.text = question2.getTrueOption()
 
             setButtonColor(q2BtnTrue, R.color.colorGreen)
             setButtonColor(q2BtnFalse, R.color.colorRedSelected)
@@ -242,23 +249,35 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Storing & Checking user input values from user input elements
+            //todo: check RawAnwer for 2, 3, 4 & 6
             val q1SelectedAnswer = q1CheckAnswer()
-            val q2SelectedAnswer = q2CheckAnswer()
+            val q2RawAnswer = q2CheckAnswer()
             val q3SelectedAnswer = q3CheckAnswer()
             val q4SelectedAnswer = q4CheckAnswer()
             val q5SelectedAnswer = q5CheckAnswer()
             val q6SelectedAnswer = q6CheckAnswer()
 
             // if at least 1 answer is null, stop
-            if (q1SelectedAnswer == null || q2SelectedAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6SelectedAnswer == null) {
+            if (q1SelectedAnswer == null || q2RawAnswer == null || q3SelectedAnswer == null || q4SelectedAnswer == null || q5SelectedAnswer == null || q6SelectedAnswer == null) {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
+            //todo: apply all this after creating logic for selection
+
+            // CLEAN non-numerical questions before sending data
+            fun cleanAnswer(text:String): String {
+                return text.replace("👉", "").trim()
+            }
+            val q2SelectedAnswer = cleanAnswer(q2RawAnswer)
+            //val q3SelectedAnswer = q3CheckAnswer()
+            //val q4SelectedAnswer = q4CheckAnswer()
+           // val q6SelectedAnswer = q6CheckAnswer()
+
+
+
 
             // Time to send data
             mainToSecond.putExtra("Q1_CORRECT_ANSWER", question1.getAnswer())
