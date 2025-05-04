@@ -268,7 +268,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:button="@null"
-                        android:text="@string/q2BtnFalse" />
+                        android:text="@string/q2BtnFalse"
+                        tools:ignore="TextContrastCheck" />
 
                     <RadioButton
                         android:id="@+id/q3btnOption2"
@@ -277,7 +278,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:button="@null"
-                        android:text="@string/q2BtnTrue" />
+                        android:text="@string/q2BtnTrue"
+                        tools:ignore="TextContrastCheck" />
 
                     <RadioButton
                         android:id="@+id/q3btnOption3"
@@ -285,7 +287,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:button="@null"
-                        android:text="@string/q2BtnFalse" />
+                        android:text="@string/q2BtnFalse"
+                        tools:ignore="TextContrastCheck" />
                 </RadioGroup>
 
                 <TextView
@@ -319,12 +322,13 @@
                 android:id="@+id/card4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
+                android:background="@color/colorPurple"
                 android:padding="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/matCard3">
 
                 <TextView
                     android:id="@+id/q4Number"
+                    style="@style/heading1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
@@ -336,6 +340,7 @@
 
                 <TextView
                     android:id="@+id/q4Label"
+                    style="@style/heading1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/q2Label"
@@ -344,6 +349,7 @@
 
                 <TextView
                     android:id="@+id/q4OperationText"
+                    style="@style/question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/q2OperationText"
@@ -361,21 +367,32 @@
 
                     <RadioButton
                         android:id="@+id/q4btnOption1"
+                        style="@style/btnMChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/q2BtnFalse" />
+                        android:layout_marginEnd="8dp"
+                        android:button="@null"
+                        android:text="@string/q2BtnFalse"
+                        tools:ignore="TextContrastCheck" />
 
                     <RadioButton
                         android:id="@+id/q4btnOption2"
+                        style="@style/btnMChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/q2BtnTrue" />
+                        android:layout_marginEnd="8dp"
+                        android:button="@null"
+                        android:text="@string/q2BtnTrue"
+                        tools:ignore="TextContrastCheck" />
 
                     <RadioButton
                         android:id="@+id/q4btnOption3"
+                        style="@style/btnMChoice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/q2BtnFalse" />
+                        android:button="@null"
+                        android:text="@string/q2BtnFalse"
+                        tools:ignore="TextContrastCheck" />
                 </RadioGroup>
 
                 <TextView
