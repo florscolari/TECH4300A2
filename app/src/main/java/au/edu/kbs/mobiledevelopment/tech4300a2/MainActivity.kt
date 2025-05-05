@@ -98,7 +98,6 @@ class MainActivity : AppCompatActivity() {
             setButtonColor(q2BtnTrue, R.color.colorGreen)
             setButtonColor(q2BtnFalse, R.color.colorRedSelected)
         }
-//TODO: change the icon for the app when it launches
 
         // Q3 Multiple Choice: Taking all UI elements to be used for a question object Q3
         val q3Number = findViewById<TextView>(R.id.q3Number)

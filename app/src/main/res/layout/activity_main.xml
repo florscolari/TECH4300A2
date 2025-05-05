@@ -692,7 +692,8 @@
             android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/bg_shape_turquoise" />
+            app:srcCompat="@drawable/bg_shape_turquoise"
+            tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/monsterTop"

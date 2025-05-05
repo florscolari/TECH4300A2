@@ -93,6 +93,11 @@
         app:layout_constraintTop_toBottomOf="@id/wrongLabel"  />
 
 
+
+
+
+
+
     <Button
         android:id="@+id/btnShowAnswers"
         style="@style/btnPrimary"
@@ -370,4 +375,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bg_shape_purple_light" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="111dp"
+        android:layout_height="107dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnShowAnswers"
+        android:layout_marginBottom="-4dp"
+        app:srcCompat="@drawable/monster_results"
+        tools:layout_editor_absoluteY="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
