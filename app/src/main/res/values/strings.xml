@@ -69,4 +69,8 @@
     <string name="q6BtnFalse">False</string>
     <string name="q6Feedback" />
 
+    <!-- Second Activity -->
+    <string name="resultTitle">Results</string>
+    <string name="retakeQuiz">Retake Quiz</string>
+
 </resources>
