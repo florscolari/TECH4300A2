@@ -300,10 +300,12 @@ class MainActivity : AppCompatActivity() {
         btnResetQuiz.setOnClickListener {
             // Q1 to Clear EditText View
             q1Answer.text.clear()
+            q1Feedback.text = ""
 
             // Q2 to Clear radio buttons: selection, text & color to rollback
             // Clearing the selection through the radio group
             q2BtnRadioGroup.clearCheck()
+            q2Feedback.text = ""
             // Radio Button True
             q2BtnTrue.text = question2.getTrueOption()
             setButtonColor(q2BtnTrue, R.color.colorGreen)
@@ -314,6 +316,7 @@ class MainActivity : AppCompatActivity() {
             // Q3 to Clear radio buttons: selection, text & color to rollback
             // Clearing the selection through the radio group
             q3BtnRadioGroup.clearCheck()
+            q3Feedback.text = ""
             // Radio Button Opt1
             q3BtnOption1.text = question3.getOption1()
             setButtonColor(q3BtnOption1, R.color.colorBlue)
@@ -327,6 +330,7 @@ class MainActivity : AppCompatActivity() {
             // Q4 to Clear radio buttons: selection, text & color to rollback
             // Clearing the selection through the radio group
             q4BtnRadioGroup.clearCheck()
+            q4Feedback.text = ""
             // Radio Button Opt1
             q4BtnOption1.text = question4.getOption1()
             setButtonColor(q4BtnOption1, R.color.colorBlue)
@@ -339,10 +343,12 @@ class MainActivity : AppCompatActivity() {
 
             // Q5 to Clear EditText View
             q5Answer.text.clear()
+            q5Feedback.text = ""
 
             // Q6 to Clear radio buttons: selection, text & color to rollback
             // Clearing the selection through the radio group
             q6BtnRadioGroup.clearCheck()
+            q6Feedback.text = ""
             // Radio Button True
             q6BtnTrue.text = question6.getTrueOption()
             setButtonColor(q6BtnTrue, R.color.colorGreen)
