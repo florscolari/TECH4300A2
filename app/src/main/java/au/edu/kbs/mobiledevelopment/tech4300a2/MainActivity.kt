@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -300,13 +299,62 @@ class MainActivity : AppCompatActivity() {
         // BTN: Reset Quiz btn
         val btnResetQuiz = findViewById<Button>(R.id.btnReset)
         val q2BtnRadioGroup = findViewById<RadioGroup>(R.id.q2BtnGroup)
+        val q3BtnRadioGroup = findViewById<RadioGroup>(R.id.q3BtnGroup)
+        val q4BtnRadioGroup = findViewById<RadioGroup>(R.id.q4BtnGroup)
+        val q6BtnRadioGroup = findViewById<RadioGroup>(R.id.q6BtnGroup)
+        //todo: grab the missing UI elements for this
         btnResetQuiz.setOnClickListener {
-            q1Answer.text.clear() // to Clear EditText View
+            // Q1 to Clear EditText View
+            q1Answer.text.clear()
+
+            // Q2 to Clear radio buttons: selection, text & color to rollback
+            // Clearing the selection through the radio group
             q2BtnRadioGroup.clearCheck()
+            // Radio Button True
             q2BtnTrue.text = question2.getTrueOption()
             setButtonColor(q2BtnTrue, R.color.colorGreen)
+            // Radio Button False
+            q2BtnFalse.text = question2.getFalseOption()
+            setButtonColor(q2BtnFalse, R.color.colorRed)
 
-            q5Answer.text.clear() // to Clear EditText View
+            // Q3 to Clear radio buttons: selection, text & color to rollback
+            // Clearing the selection through the radio group
+            q3BtnRadioGroup.clearCheck()
+            // Radio Button Opt1
+            q3BtnOption1.text = question3.getOption1()
+            setButtonColor(q3BtnOption1, R.color.colorBlue)
+            // Radio Button Opt2
+            q3BtnOption2.text = question3.getOption2()
+            setButtonColor(q3BtnOption2, R.color.colorBlue)
+            // Radio Button Opt3
+            q3BtnOption3.text = question3.getOption3()
+            setButtonColor(q3BtnOption3, R.color.colorBlue)
+
+            // Q4 to Clear radio buttons: selection, text & color to rollback
+            // Clearing the selection through the radio group
+            q4BtnRadioGroup.clearCheck()
+            // Radio Button Opt1
+            q4BtnOption1.text = question4.getOption1()
+            setButtonColor(q4BtnOption1, R.color.colorBlue)
+            // Radio Button Opt2
+            q4BtnOption2.text = question4.getOption2()
+            setButtonColor(q4BtnOption2, R.color.colorBlue)
+            // Radio Button Opt3
+            q4BtnOption3.text = question4.getOption3()
+            setButtonColor(q4BtnOption3, R.color.colorBlue)
+
+            // Q5 to Clear EditText View
+            q5Answer.text.clear()
+
+            // Q6 to Clear radio buttons: selection, text & color to rollback
+            // Clearing the selection through the radio group
+            q6BtnRadioGroup.clearCheck()
+            // Radio Button True
+            q6BtnTrue.text = question6.getTrueOption()
+            setButtonColor(q6BtnTrue, R.color.colorGreen)
+            // Radio Button False
+            q6BtnFalse.text = question6.getFalseOption()
+            setButtonColor(q6BtnFalse, R.color.colorRed)
         }
         /// END Restart Functionality
 
@@ -393,10 +441,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
-
-
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Storing & Checking user input values from user input elements
@@ -412,9 +456,6 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
-
-
-
 
 
             // CLEAN non-numerical questions before sending data
