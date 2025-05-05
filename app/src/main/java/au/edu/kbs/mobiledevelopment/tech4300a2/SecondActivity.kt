@@ -184,8 +184,27 @@ class SecondActivity : AppCompatActivity() {
 
         // Display CORRECT or INCORRECT TAGS close to user's answers & Grab UI elements
         val q1Tag = findViewById<TextView>(R.id.q1Tag)
+        val q2Tag = findViewById<TextView>(R.id.q2Tag)
+        val q3Tag = findViewById<TextView>(R.id.q3Tag)
+        val q4Tag = findViewById<TextView>(R.id.q4Tag)
+        val q5Tag = findViewById<TextView>(R.id.q5Tag)
+        val q6Tag = findViewById<TextView>(R.id.q6Tag)
+
+        // Change text to emoji
         val q1ResultEmoji = convertTextToIcon(q1Result)
+        val q2ResultEmoji = convertTextToIcon(q2Result)
+        val q3ResultEmoji = convertTextToIcon(q3Result)
+        val q4ResultEmoji = convertTextToIcon(q4Result)
+        val q5ResultEmoji = convertTextToIcon(q5Result)
+        val q6ResultEmoji = convertTextToIcon(q6Result)
+
+        // Set emoji on UI elements
         q1Tag.text = q1ResultEmoji
+        q2Tag.text = q2ResultEmoji
+        q3Tag.text = q3ResultEmoji
+        q4Tag.text = q4ResultEmoji
+        q5Tag.text = q5ResultEmoji
+        q6Tag.text = q6ResultEmoji
 
 
 

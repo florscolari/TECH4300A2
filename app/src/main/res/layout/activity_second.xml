@@ -311,8 +311,50 @@
                 app:layout_constraintStart_toStartOf="@id/guideVTags"
                 app:layout_constraintTop_toBottomOf="@id/showUserAnswersLabel" />
 
+            <TextView
+                android:id="@+id/q2Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q2Tag"
+                app:layout_constraintStart_toStartOf="@id/guideVTags"
+                app:layout_constraintTop_toBottomOf="@id/q1Tag" />
 
+            <TextView
+                android:id="@+id/q3Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q3Tag"
+                app:layout_constraintStart_toStartOf="@id/guideVTags"
+                app:layout_constraintTop_toBottomOf="@id/q2Tag" />
 
+            <TextView
+                android:id="@+id/q4Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q4Tag"
+                app:layout_constraintStart_toStartOf="@id/guideVTags"
+                app:layout_constraintTop_toBottomOf="@id/q3Tag" />
+
+            <TextView
+                android:id="@+id/q5Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q5Tag"
+                app:layout_constraintStart_toStartOf="@id/guideVTags"
+                app:layout_constraintTop_toBottomOf="@id/q4Tag" />
+
+            <TextView
+                android:id="@+id/q6Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q6Tag"
+                app:layout_constraintStart_toStartOf="@id/guideVTags"
+                app:layout_constraintTop_toBottomOf="@id/q5Tag" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- END Card Show Answers -->
     </com.google.android.material.card.MaterialCardView>
