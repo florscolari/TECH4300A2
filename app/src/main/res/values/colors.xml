@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
 
     <color name="black">#000000</color> <!--BLACK Contrast Ratio with text in white: 21:1 PASS -->
     <color name="white">#FFFFFF</color>

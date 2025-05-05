@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         q1OpText1.text = question1.getOpText1()
         q1OpText2.text = question1.getOpText2()
 
-
         // Q2 True or False: Taking all UI elements to be used for a question object Q2
         val q2Number = findViewById<TextView>(R.id.q2Number)
         val q2Label = findViewById<TextView>(R.id.q2Label)
@@ -58,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         val q2BtnTrue = findViewById<RadioButton>(R.id.q2BtnTrue)
         val q2BtnFalse = findViewById<RadioButton>(R.id.q2BtnFalse)
         val q2Feedback = findViewById<TextView>(R.id.q2Feedback)
-
 
         q2Number.text = question2.getNumber().toString()
         q2Label.text = question2.getLabel()
@@ -100,7 +98,6 @@ class MainActivity : AppCompatActivity() {
             setButtonColor(q2BtnTrue, R.color.colorGreen)
             setButtonColor(q2BtnFalse, R.color.colorRedSelected)
         }
-
 
         // Q3 Multiple Choice: Taking all UI elements to be used for a question object Q3
         val q3Number = findViewById<TextView>(R.id.q3Number)
@@ -167,7 +164,6 @@ class MainActivity : AppCompatActivity() {
             setButtonColor(q3BtnOption3, R.color.colorBlueSelected)
         }
         ////////// Q3 END Radio button changes
-
 
         // Q4 Multiple Choice: Taking all UI elements to be used for a question object Q4
         val q4Number = findViewById<TextView>(R.id.q4Number)
@@ -290,10 +286,8 @@ class MainActivity : AppCompatActivity() {
             setButtonColor(q6BtnFalse, R.color.colorRedSelected)
         }
 
-
         // BTN: Check Results btn
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
-
 
         // START Reset Quiz Functionality
         // BTN: Reset Quiz btn
@@ -302,7 +296,7 @@ class MainActivity : AppCompatActivity() {
         val q3BtnRadioGroup = findViewById<RadioGroup>(R.id.q3BtnGroup)
         val q4BtnRadioGroup = findViewById<RadioGroup>(R.id.q4BtnGroup)
         val q6BtnRadioGroup = findViewById<RadioGroup>(R.id.q6BtnGroup)
-        //todo: grab the missing UI elements for this
+
         btnResetQuiz.setOnClickListener {
             // Q1 to Clear EditText View
             q1Answer.text.clear()
