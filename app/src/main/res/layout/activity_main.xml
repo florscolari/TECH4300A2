@@ -22,9 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="40dp" />
-
-
+            app:layout_constraintGuide_begin="60dp" />
 
         <TextView
             android:id="@+id/appTitle"
@@ -45,14 +43,15 @@
             android:text="@string/appSubtitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appTitle" />
+            app:layout_constraintTop_toBottomOf="@id/appTitle"
+            tools:ignore="TextSizeCheck" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideVMonsterBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="180dp" />
+            app:layout_constraintGuide_begin="204dp" />
         <!-- END MonsterMath Header Section -->
 
 
@@ -684,6 +683,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/bg_shape_turquoise" />
 
+        <ImageView
+            android:layout_width="700dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-100dp"
+            android:layout_marginBottom="-120dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/monster_bottom" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-70dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_top" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
