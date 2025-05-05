@@ -71,6 +71,13 @@
 
     <!-- Second Activity -->
     <string name="resultTitle">Results</string>
+    <string name="scoreOverallLabel">Overall</string>
+    <string name="totalScore">-</string>
+
+
+
     <string name="retakeQuiz">Retake Quiz</string>
+
+
 
 </resources>

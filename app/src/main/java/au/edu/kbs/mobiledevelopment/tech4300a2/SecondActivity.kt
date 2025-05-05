@@ -128,7 +128,7 @@ class SecondActivity : AppCompatActivity() {
         val percentage: Double = totalScore.toDouble() / totalQuestions.toDouble() * 100
 
         // Assigning data to UI elements to be displayed on Main Activity
-        val textResult = findViewById<TextView>(R.id.result)
+        val textResult = findViewById<TextView>(R.id.totalScore)
         textResult.text = q1Result
         score.text = String.format(Locale.ROOT, "%.0f%%", percentage)
         marksContent.text = marks.toString()

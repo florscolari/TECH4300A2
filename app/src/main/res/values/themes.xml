@@ -17,6 +17,29 @@
         <item name="android:fontFamily">@font/quicksand_bold</item>
     </style>
 
+    <!-- Second Act Label -->
+    <style name="label">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingHorizontal">3dp</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <!-- Overall Score -->
+    <style name="totalScore">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorBlue</item>
+        <item name="android:paddingHorizontal">3dp</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+
+
+
     <style name="heading1">
         <item name="android:textSize">26sp</item>
         <item name="android:textStyle">bold</item>
