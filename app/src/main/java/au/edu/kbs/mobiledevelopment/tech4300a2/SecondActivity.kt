@@ -170,8 +170,22 @@ class SecondActivity : AppCompatActivity() {
             wrongAnswers += 1
         }
 
-        // Display CORRECT or INCORRECT TAGS close to user's answers & Grab UI elements
 
+        // Converting Text Tags into Emojis kid-friendly
+        fun convertTextToIcon(text:String): String {
+            val correct = "Correct"
+            val incorrect = "Incorrect"
+            return if (text == correct) {
+                text.replace(correct, "✅").trim()
+            } else {
+                text.replace(incorrect, "❌").trim()
+            }
+        }
+
+        // Display CORRECT or INCORRECT TAGS close to user's answers & Grab UI elements
+        val q1Tag = findViewById<TextView>(R.id.q1Tag)
+        val q1ResultEmoji = convertTextToIcon(q1Result)
+        q1Tag.text = q1ResultEmoji
 
 
 

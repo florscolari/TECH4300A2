@@ -100,6 +100,14 @@
     <string name="q5ShowUserAnswer">U5</string>
     <string name="q6ShowUserAnswer">U6</string>
 
+    <!-- Show Correct & Incorrect Tags -->
+    <string name="q1Tag">T1</string>
+    <string name="q2Tag">T2</string>
+    <string name="q3Tag">T3</string>
+    <string name="q4Tag">T4</string>
+    <string name="q5Tag">T5</string>
+    <string name="q6Tag">T6</string>
+
 
 
 

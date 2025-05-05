@@ -294,6 +294,25 @@
                 app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
                 app:layout_constraintTop_toBottomOf="@id/q5ShowUserAnswer" />
 
+            <!-- Correct & Incorrect Tags -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideVTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="240dp" />
+
+            <TextView
+                android:id="@+id/q1Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q1Tag"
+                app:layout_constraintStart_toStartOf="@id/guideVTags"
+                app:layout_constraintTop_toBottomOf="@id/showUserAnswersLabel" />
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- END Card Show Answers -->
     </com.google.android.material.card.MaterialCardView>
