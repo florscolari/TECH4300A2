@@ -470,10 +470,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
-
             // Time to send data
             mainToSecond.putExtra("Q1_CORRECT_ANSWER", question1.getAnswer())
             mainToSecond.putExtra("Q1_USER_ANSWER", q1SelectedAnswer)

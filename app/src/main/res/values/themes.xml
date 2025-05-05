@@ -1,9 +1,13 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
     <style name="Base.Theme.TECH4300A2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- background color for splash screen added -->
+        <item name="android:windowSplashScreenBackground" tools:ignore="NewApi">@color/colorPurple</item>
     </style>
+
+
 
 
     <!-- MATH QUIZ -->
@@ -90,6 +94,15 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/quicksand_regular</item>
     </style>
+    <!-- Question to override EditText styles from Material Theme -->
+    <style name="editTextQuestion" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+
+
 
     <!-- Answer -->
     <style name="answer">

@@ -71,11 +71,13 @@
 
                 <EditText
                     android:id="@+id/q1UserValue"
-                    android:layout_width="100dp"
-                    android:layout_height="48dp"
+                    android:layout_width="70dp"
+                    android:layout_height="54dp"
                     android:autofillHints="?"
                     android:ems="10"
+                    android:layout_marginTop="4dp"
                     android:inputType="number"
+                    style="@style/editTextQuestion"
                     android:textColorHint="#546E7A"
                     app:layout_constraintEnd_toStartOf="@+id/q1OpText2"
                     app:layout_constraintStart_toEndOf="@+id/q1OpText1"
@@ -465,11 +467,13 @@
 
                 <EditText
                     android:id="@+id/q5UserValue"
-                    android:layout_width="100dp"
-                    android:layout_height="48dp"
+                    android:layout_width="70dp"
+                    android:layout_height="54dp"
                     android:autofillHints="?"
                     android:ems="10"
+                    android:layout_marginTop="4dp"
                     android:inputType="number"
+                    style="@style/editTextQuestion"
                     android:textColorHint="#546E7A"
                     app:layout_constraintEnd_toStartOf="@+id/q5OpText2"
                     app:layout_constraintStart_toEndOf="@+id/q5OpText1"
