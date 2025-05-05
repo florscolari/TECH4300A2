@@ -94,7 +94,7 @@
 
 
     <Button
-        android:id="@+id/showAnswers"
+        android:id="@+id/btnShowAnswers"
         style="@style/btnPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
         style="?attr/materialButtonOutlinedStyle"
         android:fontFamily="@font/quicksand_bold"
         android:text="@string/retakeQuiz"
-        app:layout_constraintTop_toBottomOf="@id/showAnswers"
+        app:layout_constraintTop_toBottomOf="@id/btnShowAnswers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -136,60 +136,90 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="389dp" />
+        app:layout_constraintGuide_begin="334dp" />
 
 
     <!-- START Material card Show Answers -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/matCard6"
+        android:id="@+id/matCard7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_goto_main_activity">
 
         <!--START Card 6 using a ConstraintLayout -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/card6"
+            android:id="@+id/card7"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
             android:background="@color/colorPurple"
-            app:layout_constraintTop_toBottomOf="@+id/matCard5">
+            >
+
 
             <TextView
-                android:id="@+id/q6Number"
+                android:id="@+id/showAnswersLabel"
                 style="@style/heading1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="@string/q2Number"
-                app:layout_constraintBaseline_toBaselineOf="@+id/q6Label"
-                app:layout_constraintEnd_toStartOf="@+id/q6Label"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:text="@string/showAnswersLabel"
+                app:layout_constraintStart_toStartOf="@+id/card7"
+                app:layout_constraintTop_toTopOf="@id/card7" />
 
             <TextView
-                android:id="@+id/q6Label"
-                style="@style/heading1"
+                android:id="@+id/q1ShowAnswer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/q2Label"
-                app:layout_constraintStart_toEndOf="@+id/q6Number"
-                app:layout_constraintTop_toTopOf="@id/card6" />
-
-            <TextView
-                android:id="@+id/q6OperationText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/question"
-                android:text="@string/q2OperationText"
+                style="@style/answer"
+                android:text="@string/q1ShowAnswer"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/q6Label" />
+                app:layout_constraintTop_toBottomOf="@id/showAnswersLabel" />
 
+            <TextView
+                android:id="@+id/q2ShowAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q2ShowAnswer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q1ShowAnswer" />
+            <TextView
+                android:id="@+id/q3ShowAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q3ShowAnswer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q2ShowAnswer" />
+            <TextView
+                android:id="@+id/q4ShowAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q4ShowAnswer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q3ShowAnswer" />
+
+            <TextView
+                android:id="@+id/q5ShowAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q5ShowAnswer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q4ShowAnswer" />
+            <TextView
+                android:id="@+id/q6ShowAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q6ShowAnswer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q5ShowAnswer" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- END Card Show Answers -->
     </com.google.android.material.card.MaterialCardView>

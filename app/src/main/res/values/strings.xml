@@ -80,6 +80,17 @@
     <string name="wrongValue">-</string>
     <string name="retakeQuiz">Retake Quiz</string>
     <string name="showAnswers">Show Answers</string>
+    <string name="showAnswersLabel">Answers:</string>
+
+    <!-- Show Right Answers Section -->
+    <string name="q1ShowAnswer">A1</string>
+    <string name="q2ShowAnswer">A2</string>
+    <string name="q3ShowAnswer">A3</string>
+    <string name="q4ShowAnswer">A4</string>
+    <string name="q5ShowAnswer">A5</string>
+    <string name="q6ShowAnswer">A6</string>
+
+
 
 
 

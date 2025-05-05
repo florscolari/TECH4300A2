@@ -3,12 +3,15 @@ package au.edu.kbs.mobiledevelopment.tech4300a2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isInvisible
+
 import java.util.Locale
 
 class SecondActivity : AppCompatActivity() {
@@ -28,7 +31,20 @@ class SecondActivity : AppCompatActivity() {
         val score = findViewById<TextView>(R.id.totalScore)
         val marksContent = findViewById<TextView>(R.id.marks)
         val wrongAnswersContent = findViewById<TextView>(R.id.wrongAnswers)
+        val btnShowAnswers = findViewById<Button>(R.id.btnShowAnswers)
+        val viewShowAnswers = findViewById<View>(R.id.matCard7)
 
+
+        // Btn Show Answers
+        viewShowAnswers.visibility = View.INVISIBLE // hidden by default
+        btnShowAnswers.setOnClickListener{
+            if (viewShowAnswers.isInvisible){
+                viewShowAnswers.visibility = View.VISIBLE
+            }
+            else viewShowAnswers.visibility = View.INVISIBLE
+        }
+
+        // Btn Retake Quiz
         btnSecondToMain.setOnClickListener{
             val secondToMain = Intent(this, MainActivity::class.java)
             startActivity(secondToMain)
@@ -56,6 +72,20 @@ class SecondActivity : AppCompatActivity() {
         val q6CorrectAnswer = i.getStringExtra("Q6_CORRECT_ANSWER")
         val q6Answer = i.getStringExtra("Q6_USER_ANSWER")
 
+
+        // UI elements for display RIGHT Answers (coming from main activity)
+        val q1RAnswer = findViewById<TextView>(R.id.q1ShowAnswer)
+        val q2RAnswer = findViewById<TextView>(R.id.q2ShowAnswer)
+        val q3RAnswer = findViewById<TextView>(R.id.q3ShowAnswer)
+        val q4RAnswer = findViewById<TextView>(R.id.q4ShowAnswer)
+        val q5RAnswer = findViewById<TextView>(R.id.q5ShowAnswer)
+        val q6RAnswer = findViewById<TextView>(R.id.q6ShowAnswer)
+        q1RAnswer.text = q1CorrectAnswer.toString()
+        q2RAnswer.text = q2CorrectAnswer
+        q3RAnswer.text = q3CorrectAnswer
+        q4RAnswer.text = q4CorrectAnswer
+        q5RAnswer.text = q5CorrectAnswer.toString()
+        q6RAnswer.text = q6CorrectAnswer
 
         // Q1: Check data & evaluate results
         val q1Result: String
