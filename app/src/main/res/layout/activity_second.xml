@@ -95,13 +95,14 @@
 
     <Button
         android:id="@+id/showAnswers"
+        style="@style/btnPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/btnPrimary"
         android:text="@string/showAnswers"
         app:layout_constraintBottom_toTopOf="@+id/btn_goto_main_activity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
     <Button
         android:id="@+id/btn_goto_main_activity"
         android:layout_width="wrap_content"
@@ -112,7 +113,7 @@
         style="?attr/materialButtonOutlinedStyle"
         android:fontFamily="@font/quicksand_bold"
         android:text="@string/retakeQuiz"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showAnswers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -130,5 +131,68 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="193dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="389dp" />
+
+
+    <!-- START Material card Show Answers -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/matCard6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_goto_main_activity">
+
+        <!--START Card 6 using a ConstraintLayout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:background="@color/colorPurple"
+            app:layout_constraintTop_toBottomOf="@+id/matCard5">
+
+            <TextView
+                android:id="@+id/q6Number"
+                style="@style/heading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/q2Number"
+                app:layout_constraintBaseline_toBaselineOf="@+id/q6Label"
+                app:layout_constraintEnd_toStartOf="@+id/q6Label"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/q6Label"
+                style="@style/heading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q2Label"
+                app:layout_constraintStart_toEndOf="@+id/q6Number"
+                app:layout_constraintTop_toTopOf="@id/card6" />
+
+            <TextView
+                android:id="@+id/q6OperationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/question"
+                android:text="@string/q2OperationText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/q6Label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- END Card Show Answers -->
+    </com.google.android.material.card.MaterialCardView>
+    <!-- END Material Card Show Answers as wrapper -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
