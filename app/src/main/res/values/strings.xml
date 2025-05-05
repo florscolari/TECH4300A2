@@ -18,7 +18,12 @@
 
     <string name="submitQuiz">Check Results!</string>
     <string name="resetQuiz">Reset Quiz</string>
-    <!-- I realised while writing the set for last Q6 that is hasn't used this because it is taking directly from DOM manipulation -->
+
+
+    <!-- Main Activity -->
+    <string name="appTitle">Monster Math</string>
+    <string name="appSubtitle">Help Zogg &amp; Friends to solve this quiz</string>
+
     <!-- Q1 -->
     <string name="q1Number">0</string>
     <string name="q1Label">Label</string>

@@ -16,6 +16,46 @@
         android:layout_height="wrap_content"
         tools:context=".MainActivity">
 
+        <!-- START MonsterMath Header Section -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideVMonsterTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="40dp" />
+
+
+
+        <TextView
+            android:id="@+id/appTitle"
+            style="@style/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/appTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideVMonsterTop" />
+
+        <TextView
+            android:id="@+id/appSubtitle"
+            style="@style/label"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/appSubtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appTitle" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideVMonsterBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="180dp" />
+        <!-- END MonsterMath Header Section -->
+
+
         <!-- START Material card 1 test wrapping constraint into this -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/matCard1"
@@ -26,7 +66,7 @@
             app:cardElevation="2dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="@id/guideVMonsterBottom">
 
             <!--START Card 1 using a ConstraintLayout -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -613,7 +653,7 @@
             app:layout_constraintBottom_toTopOf="@+id/btnReset"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+            tools:ignore="HardcodedText,TouchTargetSizeCheck,VisualLintOverlap" />
 
         <Button
             android:id="@+id/btnReset"
@@ -632,7 +672,20 @@
             app:layout_constraintBottom_toBottomOf="@+id/main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+            tools:ignore="HardcodedText,TouchTargetSizeCheck,VisualLintOverlap" />
+
+        <!-- BG decorative element -->
+        <ImageView
+            android:layout_width="733dp"
+            android:layout_height="1200dp"
+            android:layout_marginStart="-200dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/bg_shape_turquoise" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- END Only Child for a ScrollView -->
 </ScrollView>
