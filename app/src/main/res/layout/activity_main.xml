@@ -17,6 +17,17 @@
         tools:context=".MainActivity">
 
         <!-- START MonsterMath Header Section -->
+        <ImageView
+            android:id="@+id/monsterBottom"
+            android:layout_width="700dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-100dp"
+            android:layout_marginBottom="-120dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/monster_bottom" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideVMonsterTop"
             android:layout_width="wrap_content"
@@ -164,7 +175,7 @@
                 android:id="@+id/card2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPurple"
+                android:background="@color/colorPurpleLight"
                 android:padding="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/matCard1">
 
@@ -363,7 +374,7 @@
                 android:id="@+id/card4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPurple"
+                android:background="@color/colorPurpleLight"
                 android:padding="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/matCard3">
 
@@ -561,7 +572,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp"
-                android:background="@color/colorPurple"
+                android:background="@color/colorPurpleLight"
                 app:layout_constraintTop_toBottomOf="@+id/matCard5">
 
                 <TextView
@@ -684,17 +695,7 @@
             app:srcCompat="@drawable/bg_shape_turquoise" />
 
         <ImageView
-            android:layout_width="700dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="-100dp"
-            android:layout_marginBottom="-120dp"
-            android:importantForAccessibility="no"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/monster_bottom" />
-
-        <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/monsterTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-70dp"

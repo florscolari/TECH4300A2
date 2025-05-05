@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="black">#000000</color> <!--BLACK Contrast Ratio with text in white: 21:1 PASS -->
+    <color name="black">#1D252A</color> <!--BLACK WCAG compliances below based on this black color -->
     <color name="white">#FFFFFF</color>
 
 
     <!-- Palette -->
     <color name="colorYellow">#FBC61D</color>
     <color name="colorPurple">#A97CC9</color>
-    <color name="colorPurpleLight">#E1C3F6</color>
-    <color name="colorPink">#F15D86</color>
-    <color name="colorTurquoiseLight">#ACE8E8</color>
+    <color name="colorPurpleLight">#DAB1E2</color> <!-- 8:41 PASS -->
+    <color name="colorPink">#FFB74D</color> <!-- 8:98 PASS -->
+    <color name="colorTurquoiseLight">#CFF3F7</color> <!-- 13:19 PASS -->
     <color name="colorTurquoise">#1CCFC9</color>
-    <color name="colorOrange">#FF8D6A</color>
+    <color name="colorOrange">#D55A2A</color>
 
     <!-- Color Code -->
-    <color name="colorGreen">#28A745</color>
-    <color name="colorGreenSelected">#1E7F41</color>
-    <color name="colorRed">#D6453D</color>
-    <color name="colorRedSelected">#B3261E</color>
-    <color name="colorBlue">#1C73CF</color> <!-- #todo: check contrast-->
-    <color name="colorBlueSelected">#165CA6</color> <!-- #todo: check contrast-->
+    <color name="colorGreen">#218739</color> <!-- 4:57 passes large text-->
+    <color name="colorGreenSelected">#1B6F2E</color> <!-- 6:25 passes large text-->
+    <color name="colorRed">#CE342C</color> <!-- 5:05 passes large text-->
+    <color name="colorRedSelected">#B3261E</color> <!-- 6:53 passes large text-->
+    <color name="colorBlue">#1C73CF</color> <!-- 4:76 passes large text-->
+    <color name="colorBlueSelected">#165CA6</color> <!-- 6:74 passes Large text-->
 
+    <!-- Old Palette, changed to be accessible
+    <color name="colorYellow">#FBC61D</color>
+    <color name="colorPurple">#A97CC9</color>
+    <color name="colorPurpleLight">#E1C3F6</color>
+    <color name="colorPink">#F48FB1F15D86</color>
+    <color name="colorTurquoiseLight">#C9F3F3</color>
+    <color name="colorTurquoise">#1CCFC9</color>
+    <color name="colorOrange">#D55A2A</color>-->
 </resources>
