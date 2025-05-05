@@ -1,6 +1,7 @@
 package au.edu.kbs.mobiledevelopment.tech4300a2
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,7 @@ import androidx.core.view.isInvisible
 import java.util.Locale
 
 class SecondActivity : AppCompatActivity() {
+    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -86,20 +88,20 @@ class SecondActivity : AppCompatActivity() {
         q4RAnswer.text = q4CorrectAnswer
         q5RAnswer.text = q5CorrectAnswer.toString()
         q6RAnswer.text = q6CorrectAnswer
-        //todo:take all user answers and display them
+
         // UI elements for display USER Answers (coming from main activity)
         val q1UserAnswer = findViewById<TextView>(R.id.q1ShowUserAnswer)
-        /*val q2RAnswer = findViewById<TextView>(R.id.q2ShowAnswer)
-        val q3RAnswer = findViewById<TextView>(R.id.q3ShowAnswer)
-        val q4RAnswer = findViewById<TextView>(R.id.q4ShowAnswer)
-        val q5RAnswer = findViewById<TextView>(R.id.q5ShowAnswer)
-        val q6RAnswer = findViewById<TextView>(R.id.q6ShowAnswer)*/
+        val q2UserAnswer = findViewById<TextView>(R.id.q2ShowUserAnswer)
+        val q3UserAnswer = findViewById<TextView>(R.id.q3ShowUserAnswer)
+        val q4UserAnswer = findViewById<TextView>(R.id.q4ShowUserAnswer)
+        val q5UserAnswer = findViewById<TextView>(R.id.q5ShowUserAnswer)
+        val q6UserAnswer = findViewById<TextView>(R.id.q6ShowUserAnswer)
         q1UserAnswer.text = q1Answer.toString()
-        /*q2RAnswer.text = q2CorrectAnswer
-        q3RAnswer.text = q3CorrectAnswer
-        q4RAnswer.text = q4CorrectAnswer
-        q5RAnswer.text = q5CorrectAnswer.toString()
-        q6RAnswer.text = q6CorrectAnswer*/
+        q2UserAnswer.text = q2Answer
+        q3UserAnswer.text = q3Answer
+        q4UserAnswer.text = q4Answer
+        q5UserAnswer.text = q5Answer.toString()
+        q6UserAnswer.text = q6Answer
 
 
         // Q1: Check data & evaluate results
@@ -167,6 +169,10 @@ class SecondActivity : AppCompatActivity() {
             q6Result = "Incorrect"
             wrongAnswers += 1
         }
+
+        // Display CORRECT or INCORRECT TAGS close to user's answers & Grab UI elements
+
+
 
 
         // Displaying total score as percentage
