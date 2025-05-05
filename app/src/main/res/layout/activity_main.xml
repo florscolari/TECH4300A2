@@ -269,7 +269,7 @@
                         android:layout_marginEnd="8dp"
                         android:button="@null"
                         android:text="@string/q2BtnFalse"
-                        tools:ignore="TextContrastCheck" />
+                        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
                     <RadioButton
                         android:id="@+id/q3btnOption2"
@@ -279,7 +279,7 @@
                         android:layout_marginEnd="8dp"
                         android:button="@null"
                         android:text="@string/q2BtnTrue"
-                        tools:ignore="TextContrastCheck" />
+                        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
                     <RadioButton
                         android:id="@+id/q3btnOption3"
