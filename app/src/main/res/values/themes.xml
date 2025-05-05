@@ -15,11 +15,21 @@
         <item name="android:fontFamily">@font/quicksand_bold</item>
     </style>
 
-    <style name="submitBtn">
+    <style name="btnPrimary">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:paddingHorizontal">24dp</item>
         <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <!-- Material Outlined Btn overrides styles, I added the attributes on the View directly-->
+    <style name="btnSecondary">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">@color/colorPurple</item>
+
     </style>
 
     <style name="question">

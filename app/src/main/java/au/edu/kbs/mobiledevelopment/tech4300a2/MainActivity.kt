@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -235,7 +237,6 @@ class MainActivity : AppCompatActivity() {
         ////////// Q4 END Radio button changes
 
 
-
         // Q5 Fill the gap: Taking all UI elements to be used for a question object Q5
         val q5Number = findViewById<TextView>(R.id.q5Number)
         val q5Label = findViewById<TextView>(R.id.q5Label)
@@ -294,6 +295,20 @@ class MainActivity : AppCompatActivity() {
         // BTN: Check Results btn
         val btnMainToSecond = findViewById<Button>(R.id.btn_goto_second_activity)
 
+
+        // START Reset Quiz Functionality
+        // BTN: Reset Quiz btn
+        val btnResetQuiz = findViewById<Button>(R.id.btnReset)
+        val q2BtnRadioGroup = findViewById<RadioGroup>(R.id.q2BtnGroup)
+        btnResetQuiz.setOnClickListener {
+            q1Answer.text.clear() // to Clear EditText View
+            q2BtnRadioGroup.clearCheck()
+            q2BtnTrue.text = question2.getTrueOption()
+            setButtonColor(q2BtnTrue, R.color.colorGreen)
+
+            q5Answer.text.clear() // to Clear EditText View
+        }
+        /// END Restart Functionality
 
         // Checking Answers before passing data to the second activity
         fun q1CheckAnswer() : String? {
@@ -380,6 +395,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
         btnMainToSecond.setOnClickListener {
             val mainToSecond = Intent(this, SecondActivity::class.java)
             // Storing & Checking user input values from user input elements
@@ -397,6 +414,9 @@ class MainActivity : AppCompatActivity() {
             // I wrote an if expression and suggests ⬆️ Elvis operator for null safety in concise way
 
 
+
+
+
             // CLEAN non-numerical questions before sending data
             fun cleanAnswer(text:String): String {
                 return text.replace("👉", "").trim()
@@ -405,6 +425,9 @@ class MainActivity : AppCompatActivity() {
             val q3SelectedAnswer = cleanAnswer(q3RawAnswer)
             val q4SelectedAnswer = cleanAnswer(q4RawAnswer)
             val q6SelectedAnswer = cleanAnswer(q6RawAnswer)
+
+
+
 
 
 

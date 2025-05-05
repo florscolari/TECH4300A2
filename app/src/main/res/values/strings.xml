@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TECH4300A2</string>
 
+    <!-- Indicator of User Selection. All this just because I didn't want to use the UI default radio button -->
     <!-- Q2 & Q6 -->
     <string name="trueSelected">👉 True</string>
     <string name="falseSelected">👉 False</string>
@@ -16,6 +17,7 @@
     <string name="q4Option3Selected">👉 7</string>
 
     <string name="submitQuiz">Check Results!</string>
+    <string name="resetQuiz">Reset Quiz</string>
     <!-- I realised while writing the set for last Q6 that is hasn't used this because it is taking directly from DOM manipulation -->
     <!-- Q1 -->
     <string name="q1Number">0</string>
