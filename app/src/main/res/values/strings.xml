@@ -81,6 +81,8 @@
     <string name="retakeQuiz">Retake Quiz</string>
     <string name="showAnswers">Show Answers</string>
     <string name="showAnswersLabel">Answers:</string>
+    <string name="showUserAnswersLabel">Yours:</string>
+
 
     <!-- Show Right Answers Section -->
     <string name="q1ShowAnswer">A1</string>
@@ -89,6 +91,14 @@
     <string name="q4ShowAnswer">A4</string>
     <string name="q5ShowAnswer">A5</string>
     <string name="q6ShowAnswer">A6</string>
+
+    <!-- Show User Answers Section -->
+    <string name="q1ShowUserAnswer">U1</string>
+    <string name="q2ShowUserAnswer">U2</string>
+    <string name="q3ShowUserAnswer">U3</string>
+    <string name="q4ShowUserAnswer">U4</string>
+    <string name="q5ShowUserAnswer">U5</string>
+    <string name="q6ShowUserAnswer">U6</string>
 
 
 

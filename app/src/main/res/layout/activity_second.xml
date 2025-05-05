@@ -170,6 +170,7 @@
                 app:layout_constraintStart_toStartOf="@+id/card7"
                 app:layout_constraintTop_toTopOf="@id/card7" />
 
+
             <TextView
                 android:id="@+id/q1ShowAnswer"
                 android:layout_width="wrap_content"
@@ -220,6 +221,79 @@
                 android:text="@string/q6ShowAnswer"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/q5ShowAnswer" />
+
+
+        <!-- User Answers -->
+            <TextView
+                android:id="@+id/showUserAnswersLabel"
+                style="@style/heading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/showUserAnswersLabel"
+                app:layout_constraintStart_toEndOf="@+id/guideVUserAnswers"
+                app:layout_constraintTop_toTopOf="@id/card7" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideVUserAnswers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="140dp" />
+
+            <TextView
+                android:id="@+id/q1ShowUserAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q1ShowUserAnswer"
+                app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
+                app:layout_constraintTop_toBottomOf="@id/showUserAnswersLabel" />
+
+            <TextView
+                android:id="@+id/q2ShowUserAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q2ShowUserAnswer"
+                app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
+                app:layout_constraintTop_toBottomOf="@id/q1ShowUserAnswer" />
+
+            <TextView
+                android:id="@+id/q3ShowUserAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q3ShowUserAnswer"
+                app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
+                app:layout_constraintTop_toBottomOf="@id/q2ShowUserAnswer" />
+
+            <TextView
+                android:id="@+id/q4ShowUserAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q4ShowUserAnswer"
+                app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
+                app:layout_constraintTop_toBottomOf="@id/q3ShowUserAnswer" />
+
+            <TextView
+                android:id="@+id/q5ShowUserAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q5ShowUserAnswer"
+                app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
+                app:layout_constraintTop_toBottomOf="@id/q4ShowUserAnswer" />
+
+            <TextView
+                android:id="@+id/q6ShowUserAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/answer"
+                android:text="@string/q6ShowUserAnswer"
+                app:layout_constraintStart_toStartOf="@id/guideVUserAnswers"
+                app:layout_constraintTop_toBottomOf="@id/q5ShowUserAnswer" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- END Card Show Answers -->
     </com.google.android.material.card.MaterialCardView>
