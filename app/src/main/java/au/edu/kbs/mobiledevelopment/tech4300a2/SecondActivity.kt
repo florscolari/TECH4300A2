@@ -1,7 +1,6 @@
 package au.edu.kbs.mobiledevelopment.tech4300a2
 
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -16,7 +15,6 @@ import androidx.core.view.isInvisible
 import java.util.Locale
 
 class SecondActivity : AppCompatActivity() {
-    @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -212,8 +210,6 @@ class SecondActivity : AppCompatActivity() {
         val percentage: Double = totalScore.toDouble() / totalQuestions.toDouble() * 100
 
         // Assigning data to UI elements to be displayed on Main Activity
-        val textResult = findViewById<TextView>(R.id.totalScore)
-        textResult.text = q1Result
         score.text = String.format(Locale.ROOT, "%.0f%%", percentage)
         marksContent.text = marks.toString()
         wrongAnswersContent.text = wrongAnswers.toString()
